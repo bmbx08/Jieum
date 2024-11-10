@@ -1,12 +1,16 @@
-## React Template
+## Jieum
 
-This template uses the following libraries:
+This project was created to provide Baekseok students a platform where they can achieve group study goals.
 
-### 1. React Router 
+
+
+This project uses the following libraries:
+
+#### 1. React Router 
 - Enables navigating between multiple pages without refreshing the page.
-### 2. React Redux 
+#### 2. React Redux 
 - Helps manage client-side states used across multiple components.
-### 3. React Query 
+#### 3. React Query 
 - Helps manage server-side states(makes data fetching comfortable)
-### 4. Axios 
+#### 4. Axios 
 - Simplifies HTTP requests
