@@ -14,3 +14,11 @@ function reducer(state=initialState,action){
 }
 
 export default reducer;
+
+//how to use useDispatch/useSelector
+// let count = useSelector((state)=>state.count);
+  // const dispatch = useDispatch();
+
+  // const increase= ()=>{
+  //   dispatch({type:"INCREMENT"})
+  // }
