@@ -1,0 +1,10 @@
+@font-face{
+    font-family: '둥글';
+    font-style: 'normal';
+    font-weight: 400;
+    src: url('./fonts/KCC-Ganpan.woff');
+}
+
+body{
+    /* font-family: "둥글";    */
+}
