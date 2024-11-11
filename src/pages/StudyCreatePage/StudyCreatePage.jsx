@@ -8,6 +8,7 @@ import DropdownOne from './components/DropdownOne';
 import DropdownTwo from './components/DropdownTwo';
 import BadgeGroup from './components/BadgeGroup';
 import StudyTable from './components/StudyTable';
+import SubjectSearchInput from './components/SubjectSearchInput';
 
 const StudyCreatePage = () => {
   // let count = useSelector((state)=>state.count);
@@ -19,8 +20,12 @@ const StudyCreatePage = () => {
 
   const [selectedCategory,setSelectedCategory]= useState("");
   const [selectedDropdownOne,setSelectedDropdownOne] = useState("");
+
   const [showDropdownTwo,setShowDropdownTwo] = useState(false);
   const [selectedDropdownTwo, setSelectedDropdownTwo]=useState("");
+
+
+
   const [showSelfImproveInput, setShowSelfImproveInput] = useState(false);
   const [selfImproveSubject, setSelfImproveSubject] = useState("");
   const [interestBadgeArray, setInterestBadgeArray] = useState([]);
@@ -111,13 +116,14 @@ const StudyCreatePage = () => {
             <div>
               <h4>카테고리를 선택해주세요.</h4>
                 <CategoryRadioGroup selectedCategory={selectedCategory} handleCategoryRadio={handleCategoryRadio}/>
-                <div className='dropdown-section'>
                   <DropdownOne selectedDropdownOne={selectedDropdownOne} handleDropdownOne={handleDropdownOne} selectedCategory={selectedCategory}/>
                   {showDropdownTwo?<DropdownTwo selectedDropdownTwo={selectedDropdownTwo} handleDropdownTwo={handleDropdownTwo} selectedDropdownOne={selectedDropdownOne} />:""}
                   {showSelfImproveInput?(
                     <input onChange={(event)=>setSelfImproveSubject(event.target.value)} placeholder={`${selectedDropdownOne}관련 과목을 적어주세요..`}/>
                   ):""}
-                </div>
+
+                  <SubjectSearchInput/>
+
                 
               </div>
               <div>
@@ -206,3 +212,5 @@ const StudyCreatePage = () => {
     )
   }
 }
+
+export default StudyCreatePage
