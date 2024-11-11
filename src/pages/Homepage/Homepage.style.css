@@ -1,6 +1,7 @@
 .study-create-page{
     padding: 0 10em;
     padding-top: 3em;
+    font-family: "둥글";
 }
 
 .form-title{
@@ -12,6 +13,7 @@
 .top-box{
     width:100%;
     border: 1px solid lightgray;
+    border-radius: 1.5%;
     padding: 1em;
 }
 
@@ -26,7 +28,7 @@
 
 .dropdown-section{
     display:flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .interest-badge{
@@ -35,4 +37,12 @@
     border-radius: 25%;
     font-size: 0.8em;
     margin-right: 0.4em;
+}
+
+.navigate-section{
+    display: flex;
+}
+
+.tablee{
+    border:1px solid black
 }
