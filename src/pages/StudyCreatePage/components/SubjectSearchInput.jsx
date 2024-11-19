@@ -1,31 +1,9 @@
 import React from 'react'
 
-const SubjectSearchInput = () => {
+const SubjectSearchInput = ({handleSubjectInput}) => {
   return (
-    <div>
-      <input/>
-      <ul
-          style={{
-            width: '10em', // input과 동일한 너비 설정
-            listStyleType: 'none',
-            padding: 0,
-            margin: 0,
-            border: '1px solid #ccc',
-            maxHeight: '150px',
-            overflowY: 'auto',
-            backgroundColor: 'white'
-          }}
-        >
-            <li
-              style={{
-                padding: '10px',
-                cursor: 'pointer',
-                borderBottom: '1px solid #eee'
-              }}
-            >
-                asdf
-            </li>
-        </ul>
+    <div className='mb-2'>
+      <input placeholder='과목 입력' className='subject-input' onChange={handleSubjectInput}/>
     </div>
   )
 }
