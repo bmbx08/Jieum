@@ -1,0 +1,20 @@
+.study-search {
+  position: relative;
+  width: 50%;
+}
+
+.study-search input {
+  width: 100%;
+  padding: 0.7rem;
+  padding-right: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+}
+
+.search-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
