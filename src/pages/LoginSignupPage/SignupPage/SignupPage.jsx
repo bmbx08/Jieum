@@ -6,6 +6,7 @@ import './SignupPage.css';
 const SignupPage = () => {
   const [page, setPage]= useState(1);
 
+  
   return (
     <div className="display-center">
       <h2 className="register-header">백석지음[知音] 회원가입</h2>
