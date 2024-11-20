@@ -206,3 +206,5 @@ const StudyCreatePage = () => {
     )
   }
 }
+
+export default StudyCreatePage;
