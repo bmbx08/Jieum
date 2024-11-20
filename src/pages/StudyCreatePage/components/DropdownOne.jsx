@@ -4,10 +4,10 @@ import {dropDownArrayObject} from "../arrayObject";
 const DropdownOne = ({selectedDropdownOne,handleDropdownOne,selectedCategory}) => {
   return (
     <>
-            <div>
-              <select value={selectedDropdownOne} onChange={handleDropdownOne}>
+            <div className="mb-2">
+              <select value={selectedDropdownOne} onChange={handleDropdownOne} className="custom-dropdown">
                 <option value="" disabled>
-                {selectedCategory||"항목"} 선택:
+                {selectedCategory||"항목"} 선택
                 </option>
                 {selectedCategory === "전공" &&
                   dropDownArrayObject.majorList.map((option) => (
