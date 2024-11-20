@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SignupPage.css';
 
 const SignupPage = () => {
+  const [page, setPage]= useState(1);
+
+
   return (
     <div className="display-center">
       <h2 className="register-header">백석지음[知音] 회원가입</h2>
@@ -50,7 +53,6 @@ const SignupPage = () => {
           </Form>
         </div>
       </div>
-      {/* 다음 페이지 제작해주시면 됩니다. */}
     </div>
   );
 };
