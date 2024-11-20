@@ -1,6 +1,6 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
-import '../LoginSignupPage/SignupPage.css';
+import './SignupPage.css';
 
 const SignupPage = () => {
   return (
