@@ -16,8 +16,8 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<SignupPage />}> {/*네브바*/}
-          <Route index element={<Homepage />} />
+        <Route path="/" element={<AppLayout />}> {/*네브바*/}
+          <Route index element={<SignupPage />} />
           <Route path=":id" element={<StudyRecruitPage/>}/> {/*스터디 모집 페이지(글쓰기)*/}
           <Route path ="newstudy" element={<StudyCreatePage/>}/> {/*스터디 생성 페이지*/}
           <Route path="login" element={<LoginPage/>}/>
