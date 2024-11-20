@@ -1,0 +1,80 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar-container {
+  flex: 0 0 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.main-container {
+  margin-left: 240px;
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  flex-direction: row;
+
+  overflow-y: auto;
+  background-color: #fafafa;
+}
+
+/* 홈페이지 좌우 공간 조절 */
+.left-box {
+  width: 70%; /*왼쪽 박스 공간 크기*/
+  /* height: 50em; */
+}
+
+.right-box {
+  width: 30%; /*오른쪽 박스 공간 크기*/
+  /* height: 50em; */
+}
+
+/* side bar */
+.sidebar {
+  flex: 1;
+  height: 100vh;
+  border-right: 0.1px solid #c7c7c7;
+  background-color: #f9f9f9;
+  position: sticky;
+  top: 50px;
+  padding: 0.8rem;
+  color: #4c4e33;
+}
+
+.sidebarList {
+  list-style: none;
+  padding: 0.5rem;
+}
+
+.sidebarMenu {
+  margin-bottom: 2rem;
+}
+
+.sidebarListItem {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 0.3rem;
+  /* margin-left: 1rem; */
+}
+
+.sidebarListItem.active,
+.sidebarListItem:hover {
+  background-color: #e8e8e8;
+}
+
+.sidebarListItem:first-child {
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.sidebarIcon {
+  margin-right: 0.6rem;
+  font-size: 20px !important;
+}
