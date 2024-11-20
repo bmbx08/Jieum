@@ -11,13 +11,10 @@ import RecruitSlider from "./components/RecruitSlider";
 import SliderExample from "./components/SliderExample";
 import StudyPeriodDropdown from "./components/StudyPeriodDropdown";
 import RecruitRadioButton from "./components/RecruitRadioButton";
+import { useNavigate } from "react-router-dom";
 
 const StudyCreatePage = () => {
-  // let count = useSelector((state)=>state.count);
-  
-  // const increase= ()=>{
-  //   dispatch({type:"INCREMENT"})
-  // }
+  const navigate = useNavigate();
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDropdownOne, setSelectedDropdownOne] = useState("");
@@ -38,10 +35,14 @@ const StudyCreatePage = () => {
   const [recruitNumber, setRecruitNumber] = useState(null);
   const [limitlessRecruitBoolean, setLimitlessRecruitBoolean] = useState(false);
 
+  const [scheduleValuesObject, setScheduleValuesObject] = useState({});
+
   const [blogTitle, setBlogTitle] = useState("");
   const [blogContent, setBlogContent] = useState("");
 
   const [page, setPage] = useState(1);
+
+  const [totalStudyData, setTotalStudyData] = useState({});
 
   const dispatch = useDispatch();
 
@@ -87,6 +88,7 @@ const StudyCreatePage = () => {
 
   const handleRecruitRadio = () => {
     setLimitlessRecruitBoolean((prevState) => !prevState);
+    setRecruitNumber(99);
     // if(limitlessRecruitBoolean===true){
     //   setLimitlessRecruitBoolean(false);
     // }
@@ -94,6 +96,13 @@ const StudyCreatePage = () => {
     //   setLimitlessRecruitBoolean(true);
     // }
   };
+
+  const handleScheduleInput = (event, index) => {
+    setScheduleValuesObject((prevObject)=>({
+      ...prevObject,
+      [`week${index+1}`]: event.target.value,
+    }))
+  }
 
   const navigatePage = (event) => {
     if (event.target.innerText === "다음") {
@@ -116,17 +125,16 @@ const StudyCreatePage = () => {
         recruitSize: recruitNumber,
         interestBadgeArray: interestBadgeArray,
       },
-      weeklySchedule:{
-        week1:"aaaa1",
-        week2:"aaaa2",
-      },
+      weeklySchedule:scheduleValuesObject, 
       blogPostContent:{
         blogTitle: blogTitle,
         blogContent: blogContent,
       },
     }
+    setTotalStudyData(createdStudyData);
 
     dispatch({type:"CREATE_STUDYGROUP",payload: createdStudyData});
+    // navigate("/newstudy")
   }
 
   useEffect(() => {
@@ -253,9 +261,8 @@ const StudyCreatePage = () => {
               </div>
               <div>
                 <div className="section-title font-style">주차별 학습 일정</div>
-                <StudyTable studyPeriod={studyPeriod} />
+                <StudyTable studyPeriod={studyPeriod} handleScheduleInput={handleScheduleInput}/> 
               </div>
-              <div></div>
             </div>
             <div className="bottom-box">
               <div className="title-part">
@@ -268,9 +275,11 @@ const StudyCreatePage = () => {
                   className="content-textarea"
                 />
               </div>
+              <button onClick={console.log(totalStudyData)}>객체 보여주기</button>
             </div>
 
             <div className="navigate-section">
+              
               <div>Page {page} of 2</div>
 
               <div className="button-section">

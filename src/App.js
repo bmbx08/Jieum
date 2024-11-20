@@ -16,10 +16,10 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<AppLayout />}> {/*네브바*/}
-          <Route index element={<StudyCreatePage/>}/>
+          <Route index element={<StudyCreatePage/>}/> {/* 여기에 Page이름 넣어서 테스트 해보면 돼  */}
           {/* <Route index element={<Homepage />} /> */}
           <Route path=":id" element={<StudyRecruitPage/>}/> {/*스터디 모집 페이지(글쓰기)*/}
-          <Route path ="newstudy" element={<StudyCreatePage/>}/> {/*스터디 생성 페이지*/}
+          <Route path ="newstudy" element={<Homepage/>}/> {/*스터디 생성 페이지*/}
           <Route path="login" element={<LoginPage/>}/>
           <Route path="signup" element={<SignupPage/>}/>
           <Route path ="mystudy">
