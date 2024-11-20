@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import pic1 from '../img/emoji.png'
+import pic1 from './img/emoji.png'
 import './LoginPage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
