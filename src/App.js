@@ -3,20 +3,21 @@ import "./App.css";
 import Homepage from "./pages/Homepage/Homepage";
 import AppLayout from "./layout/AppLayout";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import LoginPage from "./pages/LoginSignupPage/LoginPage";
-import SignupPage from "./pages/LoginSignupPage/SignupPage";
+import LoginPage from "./pages/LoginSignupPage/LoginPage/LoginPage";
+import SignupPage from "./pages/LoginSignupPage/SignupPage/SignupPage";
 import StudyCreatePage from "./pages/StudyCreatePage/StudyCreatePage";
 import MyStudyPage from "./pages/MyStudyPage/MyStudyPage";
 import StudyInfoPage from "./pages/StudyInfoPage/StudyInfoPage";
  import StudyRecruitPage from "./pages/StudyRecruitPage/StudyRecruitPage";
 import MyInfoPage from "./pages/MyInfoPage/MyInfoPage";
 
+
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<AppLayout />}> {/*네브바*/}
-          <Route index element={<Homepage />} />
+          <Route index element={<LoginPage />} />
           <Route path=":id" element={<StudyRecruitPage/>}/> {/*스터디 모집 페이지(글쓰기)*/}
           <Route path ="newstudy" element={<StudyCreatePage/>}/> {/*스터디 생성 페이지*/}
           <Route path="login" element={<LoginPage/>}/>
