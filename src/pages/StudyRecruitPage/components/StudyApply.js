@@ -18,7 +18,7 @@ const StudyApply = ({ onApplicantAdd, userName }) => {
     });
 
     Swal.fire({
-      position: 'top-end',
+      position: 'top',
       icon: 'success',
       title: '신청되었습니다',
       showConfirmButton: false,
@@ -29,7 +29,7 @@ const StudyApply = ({ onApplicantAdd, userName }) => {
   };
 
   return (
-    <div className="button-box">
+    <div className="study-recruit-button-box">
       <button className="apply-button" onClick={handleApply}>
         신청하기
       </button>

@@ -14,9 +14,12 @@
 }
 
 .main-container {
-  margin-left: 240px;
-  flex: 1;
-  padding: 2rem;
+  position: relative;
+  margin-left: 300px;
+  padding: 1rem;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
   background-color: #fafafa;
+  align-items: flex-start;
 }

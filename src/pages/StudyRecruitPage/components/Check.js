@@ -28,7 +28,7 @@ const Check = () => {
 
   return (
     <div>
-      <Container className="check-box">
+      <Container className="study-recruit-check-box">
         <PostTitle />
         <StudyForm
           category={studyData.category}

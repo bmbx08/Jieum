@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import './UserComment.css';
 
 const UserComment = () => {
-  //댓글 목록
-  const [comments, setComments] = useState([]);
-  //댓글 입력값
-  const [commentText, setCommentText] = useState('');
-  //댓글 입력값 관리
-  const [replyText, setReplyText] = useState('');
-  //답글 추가할 대상 댓글 관리
-  const [replyingToIndex, setReplyingToIndex] = useState(null);
+  const [comments, setComments] = useState([]); //댓글 목록
+  const [commentText, setCommentText] = useState(''); //댓글 입력값
+  const [replyText, setReplyText] = useState(''); //답글 입력값
+  const [replyingToIndex, setReplyingToIndex] = useState(null); //답글 추가할 대상 댓글 관리
 
   //댓글 입력
   const handleCommentChange = (e) => {
@@ -17,19 +13,17 @@ const UserComment = () => {
   };
 
   //답글 입력
-  const handelReplyChange = (e) => {
+  const handleReplyChange = (e) => {
     setReplyText(e.target.value);
   };
 
-  //댓글 추가 : trim() 문자열의 앞뒤 공백 제거
+  //댓글 추가
+  //trim()으로 문자열의 앞뒤 공백 제거!!
   const handleAddComment = () => {
     if (commentText.trim()) {
-      //새로운 댓글을 기존 댓글 목록에 추가
-      //comments == 현재 댓글 배열
-      //newComment == 추가된 댓글 저장 객체
       const newComment = { text: commentText, replies: [] };
       setComments([...comments, newComment]);
-      setCommentText(''); //입력창 초기화
+      setCommentText('');
     }
   };
 
@@ -44,7 +38,7 @@ const UserComment = () => {
     }
   };
 
-  //답글을 달 댓글 선택!!
+  //답글을 달 댓글 선택
   const handleReplyToComment = (index) => {
     setReplyingToIndex(index);
   };
@@ -57,27 +51,31 @@ const UserComment = () => {
           {comments.map((comment, index) => (
             <li key={index} className="comment-text">
               <p>{comment.text}</p>
-              <button
-                className="reply-btn"
-                onClick={() => handleReplyToComment(index)}
-              >
-                답글 달기
-              </button>
 
-              {replyingToIndex === index && (
+              {/* 답글 입력창과 등록 버튼 */}
+              {replyingToIndex === index ? (
                 <div className="reply-content">
                   <textarea
                     value={replyText}
-                    onChange={handelReplyChange}
+                    onChange={handleReplyChange}
                     placeholder="답글을 남겨보세요"
                     rows="3"
-                    cols="50"
                     className="textarea-comment"
                   />
-                  <button onClick={handleAddReply}>답글 달기</button>
+                  <button onClick={handleAddReply} className="reply-submit-btn">
+                    등록
+                  </button>
                 </div>
+              ) : (
+                <button
+                  className="reply-toggle-btn"
+                  onClick={() => handleReplyToComment(index)}
+                >
+                  답글 달기
+                </button>
               )}
 
+              {/* 기존 답글 목록 */}
               <div className="reply-box">
                 {comment.replies.length > 0 && (
                   <ul>
@@ -92,16 +90,16 @@ const UserComment = () => {
         </ul>
       </div>
 
+      {/* 댓글 입력창 */}
       <div className="comment-input-container">
         <textarea
           value={commentText}
           onChange={handleCommentChange}
           placeholder="댓글을 남겨보세요"
           rows="4"
-          cols="50"
           className="textarea-comment"
         />
-        <button onClick={handleAddComment} className="apply-btn">
+        <button onClick={handleAddComment} className="comment-apply-btn">
           등록
         </button>
       </div>

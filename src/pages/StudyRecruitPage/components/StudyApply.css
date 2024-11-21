@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-/* 신청하기 버튼 */
-=======
->>>>>>> Stashed changes
 .apply-button {
   background-color: #dadeaa;
   border: none;
@@ -15,13 +11,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-<<<<<<< Updated upstream
-.button-box {
-  display: flex;
-  justify-content: end;
-=======
-.study-recruit_button-box {
+.study-recruit-button-box {
   display: flex;
   justify-content: flex-end;
->>>>>>> Stashed changes
 }

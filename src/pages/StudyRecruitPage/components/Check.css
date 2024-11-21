@@ -1,11 +1,14 @@
 /* 전체 박스 */
-.check-box {
+.study-recruit-check-box {
+  display: block;
   border: 2px solid #dbdbdb;
   border-radius: 0.5rem;
-  width: 80%;
+  width: 100vh;
+  /* max-width: 1200px; */
   padding: 2rem;
   margin: auto;
   background-color: #fafafa;
+  /* box-sizing: border-box; */
 }
 
 /* 설명 텍스트 */
