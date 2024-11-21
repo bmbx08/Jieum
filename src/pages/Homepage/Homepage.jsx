@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import SideBar from '../../default/SideBar';
 import './Homepage.style.css';
 import SubNav from '../../default/SubNav';
-import StudyList from './StudyList';
-import StudyStatus from './StudyStatus';
+import StudyList from './components/StudyList';
+import StudyStatus from './components/StudyStatus';
 const Homepage = () => {
   const [selectedTab, setSelectedTab] = useState('전체');
 
