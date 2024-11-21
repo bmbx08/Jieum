@@ -1,0 +1,48 @@
+/* 등록된 스터디 모집글 */
+.study-condition {
+  border-radius: 1rem;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+.study-condition strong {
+  color: #7a7a7a;
+}
+
+/* 주차별 학습 일정 */
+.study-schedule strong {
+  color: #7a7a7a;
+}
+
+.study-schedule {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.study-schedule h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8d9429;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.study-schedule h3::before {
+  content: '•';
+  font-size: 1.2rem;
+  color: #8d9529;
+  margin-right: 0.7rem;
+}
+
+.study-schedule ul {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+.study-schedule li {
+  margin-bottom: 0.5rem;
+}

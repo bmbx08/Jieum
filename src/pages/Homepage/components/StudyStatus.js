@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './StudyStatus.css';
-import { colors } from '@mui/material';
 
 const StudyStatus = () => {
   const [ongoingStudies, setOngoingStudies] = useState([

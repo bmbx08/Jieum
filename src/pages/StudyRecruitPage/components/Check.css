@@ -1,0 +1,36 @@
+/* 전체 박스 */
+.check-box {
+  justify-content: center;
+  border: 2px solid #dbdbdb;
+  border-radius: 0.5rem;
+  width: 80%;
+  padding: 2rem;
+  margin: auto;
+  background-color: #fafafa;
+}
+
+/* 설명 텍스트 */
+.study-description {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #191919;
+}
+
+/* 신청하기 버튼 */
+.apply-button {
+  background-color: #dadeaa;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.apply-button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button-box {
+  display: flex;
+  justify-content: end;
+}
