@@ -27,11 +27,11 @@
 }
 
 .signup-input-title{
-    font-size: 1.2em;
+    font-size: 1em;
     margin-bottom: 0.2em;
 }
 
-.signup-input-style{
+.signup-input-style, .major-dropdown-style{
     border: 1.5px solid rgba(199,199,199,255);
     flex:1;
     border-radius: 0.3em;
@@ -39,8 +39,47 @@
     margin-bottom: 0.5em;
 }
 
+.half-width{
+    width: 60%;
+}
+
+.major-dropdown-style{
+    width: 100%;
+    background-image: url("./images/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    margin-bottom: 1.5em;
+}
+
+select option:first-child{
+    color: rgba(201,201,201,255);
+}
+
 .signup-input-style::placeholder{
     color: rgba(201,201,201,255);
+}
+
+.navigate-section{
+    display:flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+}
+
+.navigate-button{
+    margin-right: 0.5em;
+    border:none;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    color: rgba(128,128,128,255);
+}
+
+.navigate-button:hover{
+    opacity: 0.4;
+}
+
+.navigate-button:active{
+    opacity:0.8;
 }
 
 
@@ -53,6 +92,12 @@
 
 
 
+/* 드롭다운 화살표 없애기 */
+.major-dropdown-style{
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;         /* Standard */
+}
 
 
 /* number input창 화살표 없애기 */
