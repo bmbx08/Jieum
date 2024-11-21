@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './SignupPage.css';
 import FirstPage from "./FirstPage/FirstPage";
 import SignupInput from "./components/SignupInput";
 import MajorDropdown from "./components/MajorDropdown";
+import BadgeOverlay from "./Overlay/BadgeOverlay";
 
 const SignupPage = () => {
   const [userName, setUserName]=useState("");
@@ -12,11 +13,19 @@ const SignupPage = () => {
   const [selectedMajor, setSelectedMajor]= useState("");
   const [studentNum, setStudentNum]=useState("");
   const [userAppealPhrase,setUserAppealPhrase] = useState("");
+  const [showOverlay,setShowOverlay] = useState(false);
+  const [interestBadgeArray,setInterestBadgeArray]=useState([]);
 
   const [page, setPage]= useState(1);
 
+  const toggleOverlay=()=>{
+    setShowOverlay(!showOverlay);
+  }
   
-  
+  useEffect(()=>{
+    console.log(interestBadgeArray);
+  },[interestBadgeArray])
+
   return (
     <div className="signup-page justify-middle">
       {/* <FirstPage/> */}
@@ -33,9 +42,13 @@ const SignupPage = () => {
         </div>
       
         <div className="navigate-section">
-          <button onClick={()=>setPage(2)} className="navigate-button">다음</button>
+          <button type="button" onClick={toggleOverlay} className="navigate-button">다음</button>
         </div>
         
+        {showOverlay?(
+          <BadgeOverlay interestBadgeArray={interestBadgeArray} setInterestBadgeArray={setInterestBadgeArray}/>
+        ):""}
+
       </form>
     </div>
   );

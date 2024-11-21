@@ -79,16 +79,90 @@ select option:first-child{
 }
 
 .navigate-button:active{
-    opacity:0.8;
+    opacity:0.7;
 }
 
+.overlay{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 1000; */
+}
 
-/* .custom-dropdown {
-    background-image: url("./images/down-arrow.png");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 12px;
-} */
+.overlay-content{
+    width: 80em;
+    height: 40em;
+    padding: 4em;
+    background-color: white;
+    border-radius: 1.5%;
+}
+
+.overlay-top-section{
+    display:flex;
+    align-items: center;
+}
+
+.badge-row{
+    display:flex;
+    width: 100%;
+}
+
+.badge-title{
+    width: 10%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.badge-section{
+    width: 80%;
+    border: 1px solid black;
+}
+
+.suggestion-badge{
+    padding: 0.3em 0.8em;
+    background-color: beige;
+    border-radius: 25%;
+    font-size: 0.8em;
+    margin-right: 0.4em;
+}
+
+.interest-checkbox-input{
+    /* display:none; */
+}
+
+.interest-checkbox-button{
+    display: inline-block;
+    padding: 0.4em 1.8em;
+    margin-right: 0.5em;
+    border-radius: 8px;
+    background-color: rgba(184,184,184,255);
+    font-size: 0.8em;
+    text-align: center;
+    user-select: none;
+    transition: 0.1s ease-in;
+    color: rgba(75,75,75,255)
+}
+
+.interest-checkbox-button:hover{
+    background-color:rgba(218, 222, 170, 0.5)
+}
+
+.interest-checkbox-button.checked{
+    background-color: rgba(218,222,170,255);
+    color:black;
+}
+
+.interest-checkbox-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+  }
+  
 
 
 
@@ -98,7 +172,6 @@ select option:first-child{
     -moz-appearance: none;    /* Firefox */
     appearance: none;         /* Standard */
 }
-
 
 /* number input창 화살표 없애기 */
 input[type="number"]::-webkit-inner-spin-button,
