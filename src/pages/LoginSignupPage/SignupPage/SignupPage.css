@@ -32,7 +32,7 @@
 }
 
 .signup-input-style{
-    border: 2px solid rgba(199,199,199,255);
+    border: 1.5px solid rgba(199,199,199,255);
     flex:1;
     border-radius: 0.3em;
     padding: 0.5em 0.8em;
@@ -42,6 +42,15 @@
 .signup-input-style::placeholder{
     color: rgba(201,201,201,255);
 }
+
+
+/* .custom-dropdown {
+    background-image: url("./images/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+} */
+
 
 
 
