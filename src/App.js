@@ -18,8 +18,8 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           {' '}
           {/*네브바*/}
-          <Route index element={<StudyRecruitPage />} />
-          {/* <Route path=":id" element={<StudyRecruitPage />} />{' '} */}
+          <Route index element={<Homepage />} />
+          <Route path=":id" element={<StudyRecruitPage />} />{' '}
           {/*스터디 모집 페이지(글쓰기)*/}
           <Route path="newstudy" element={<StudyCreatePage />} />{' '}
           {/*스터디 생성 페이지*/}
