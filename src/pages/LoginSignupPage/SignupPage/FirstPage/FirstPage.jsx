@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./FirstPage.css"
 
 const FirstPage = () => {
   return (
