@@ -1,0 +1,181 @@
+.display-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.Cl-header {
+    display: flex;
+    justify-content: space-between;
+    /* 좌우 배치 */
+    align-items: center;
+    width: 100%;
+    /* progress-section과 동일한 너비 */
+    margin-bottom: 10px;
+    /* progress-container와 간격 */
+    padding: 0 10px;
+    /* 좌우 여백 */
+    box-sizing: border-box;
+    /* 패딩 포함 크기 계산 */
+}
+
+.Cl-study-title {
+    font-weight: bold;
+}
+
+.goToAdmin {
+    color: black;
+    font-size: small;
+    font-weight: bold;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    /* progress-container와 동일한 너비 */
+}
+
+.progress-container {
+    background-image: url('../ChecklistPage/background-img.png');
+    border: 1px solid lightgray;
+    width: 100%;
+    /* 부모 요소 너비에 맞춤 */
+    height: 280px;
+    background-color: #F0F0F0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    position: relative;
+}
+
+.members-content {
+    border: 1px solid lightgray;
+    width: 180px;
+    height: 280px;
+    background-color: #F0F0F0;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 20px;
+    margin-top: 45px;
+    flex-direction: column;
+}
+
+.checklist-content {
+    border: 1px solid lightgray;
+    width: 900px;
+    height: auto;
+    background-color: white;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.weekly-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.weekly-header {
+    text-align: center;
+    color: white;
+}
+
+.weekly-progressbar {
+    width: 90%;
+    /* progressbar 너비 설정 */
+    font-size: 12px;
+    /* 작은 크기로 설정 */
+    text-align: left;
+    color: white;
+    position: absolute;
+    /* 절대 위치 지정 */
+    bottom: 5px
+        /* progress-container의 아래쪽에 위치 */
+}
+
+.custom-progress-bar .progress-bar {
+    background-color: #8D9429;
+    /* 기존 색상 유지 */
+    height: 30px;
+    /* 원하는 높이 설정 */
+    line-height: 30px;
+    /* 텍스트 세로 정렬 */
+    font-size: 14px;
+    /* 텍스트 크기 조정 */
+    border-radius: 5px;
+    /* 둥근 모서리 추가 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 텍스트 가운데 정렬 */
+}
+
+.custom-progress-bar {
+    height: 30px;
+    /* 전체 ProgressBar의 높이 설정 */
+}
+
+.members-header-text {
+    font-size: 1.1em;
+    margin-bottom: 3px;
+}
+
+.user-icon {
+    font-size: 1.2em;
+    margin-right: 3px;
+}
+
+.members-name {
+    padding: 4px;
+}
+
+.members-name-text {
+    color: gray;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+.members-name-text
+
+.check-header-text {
+    font-weight: bold;
+    color: gray;
+}
+
+.week-checklist {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.check-box {
+    transform: scale(1.5);
+    margin: 10px;
+}
+
+.week-todo {
+    margin-top: 8px;
+}
