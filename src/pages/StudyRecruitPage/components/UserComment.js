@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './UserComment.css';
 
-const UserComment = () => {
+const UserComment = ({ onCommentAdd }) => {
   const [comments, setComments] = useState([]); //댓글 목록
   const [commentText, setCommentText] = useState(''); //댓글 입력값
   const [replyText, setReplyText] = useState(''); //답글 입력값
@@ -22,7 +22,9 @@ const UserComment = () => {
   const handleAddComment = () => {
     if (commentText.trim()) {
       const newComment = { text: commentText, replies: [] };
-      setComments([...comments, newComment]);
+
+      setComments((prevComments) => [...prevComments, newComment]);
+      onCommentAdd(commentText);
       setCommentText('');
     }
   };
@@ -30,9 +32,17 @@ const UserComment = () => {
   //답글 추가
   const handleAddReply = () => {
     if (replyText.trim() && replyingToIndex !== null) {
-      const updatedComments = [...comments];
-      updatedComments[replyingToIndex].replies.push(replyText);
-      setComments(updatedComments);
+      // const updatedComments = [...comments];
+      const newReply = replyText;
+
+      setComments((prevComments) => {
+        const updatedComments = [...prevComments];
+        updatedComments[replyingToIndex].replies.push(newReply);
+        return updatedComments;
+      });
+
+      onCommentAdd(newReply, true, replyingToIndex);
+
       setReplyText('');
       setReplyingToIndex(null);
     }
@@ -69,7 +79,7 @@ const UserComment = () => {
               ) : (
                 <button
                   className="reply-toggle-btn"
-                  onClick={() => handleReplyToComment(index)}
+                  onClick={() => setReplyingToIndex(index)}
                 >
                   답글 달기
                 </button>

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './Check.css';
-import { Container } from 'react-bootstrap';
 import PostTitle from './PostTitle';
 import StudyForm from './StudyForm';
 import UserComment from './UserComment';
 import StudyApply from './StudyApply';
+import ReactionBox from './ReactionBox';
 
 const Check = () => {
-  const [applicants, setApplicants] = useState([]);
+  // const [applicants, setApplicants] = useState([]);
+  const [comments, setComments] = useState([]);
 
   const studyData = {
     category: '#웹프로그래밍 #리액트',
@@ -22,26 +23,51 @@ const Check = () => {
     ],
   };
 
-  const handleApplicantUpdate = (updatedApplicants) => {
-    setApplicants(updatedApplicants);
+  const handleApplicantAdd = (newApplicant) => {
+    console.log('현재 신청자 목록:', newApplicant);
   };
 
+  //댓글 추가
+  const handleCommentAdd = (
+    newComment,
+    isReply = false,
+    parentIndex = null
+  ) => {
+    setComments((prevComments) => {
+      const updatedComments = [...prevComments];
+
+      //댓글이면 댓글 추가
+      if (isReply && parentIndex !== null) {
+        updatedComments[parentIndex].replies.push(newComment);
+      } else {
+        //답글이면 답글 추가
+        updatedComments.push({ text: newComment, replies: [] });
+      }
+      return updatedComments;
+    });
+  };
+
+  //총 댓글 수
+  const totalCommentCount = comments.reduce(
+    (count, comment) => count + 1 + comment.replies.length,
+    0
+  );
+
   return (
-    <div>
-      <Container className="study-recruit-check-box">
-        <PostTitle />
-        <StudyForm
-          category={studyData.category}
-          duration={studyData.duration}
-          maxParticipants={studyData.maxParticipants}
-          schedule={studyData.schedule}
-        />
+    <div className="study-recruit-check-box">
+      <PostTitle />
+      <StudyForm
+        category={studyData.category}
+        duration={studyData.duration}
+        maxParticipants={studyData.maxParticipants}
+        schedule={studyData.schedule}
+      />
 
-        <p className="study-description">{studyData.description}</p>
-        <StudyApply onApplicantAdd={handleApplicantUpdate} />
+      <p className="study-description">{studyData.description}</p>
 
-        <UserComment />
-      </Container>
+      <StudyApply onApplicantAdd={handleApplicantAdd} />
+      <ReactionBox commentCount={totalCommentCount} />
+      <UserComment onCommentAdd={handleCommentAdd} />
     </div>
   );
 };

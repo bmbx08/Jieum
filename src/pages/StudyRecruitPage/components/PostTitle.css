@@ -9,6 +9,9 @@
 }
 
 .toRecruit-state {
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.9rem;
   border: none;
   background: none;
   border-radius: 0.85rem;

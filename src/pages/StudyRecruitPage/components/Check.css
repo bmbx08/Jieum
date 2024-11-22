@@ -1,19 +1,37 @@
 /* 전체 박스 */
-.study-recruit-check-box {
+/* .study-recruit-check-box {
   display: block;
   border: 2px solid #dbdbdb;
   border-radius: 0.5rem;
-  width: 100vh;
-  /* max-width: 1200px; */
+  width: 100vh; */
+/* max-width: 1200px; */
+/* padding: 2rem;
+  margin: auto;
+  background-color: #fafafa; */
+/* box-sizing: border-box; */
+/* } */
+
+/* 설명 텍스트 */
+/* .study-description {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #191919;
+} */
+
+/* 전체 박스 */
+.study-recruit-check-box {
+  border: 2px solid #dbdbdb;
+  border-radius: 0.5rem;
+  width: 80%;
   padding: 2rem;
   margin: auto;
   background-color: #fafafa;
-  /* box-sizing: border-box; */
 }
 
 /* 설명 텍스트 */
 .study-description {
   margin-top: 2rem;
   font-size: 1rem;
-  color: #191919;
+  color: #4c4e33;
+  font-weight: bold;
 }
