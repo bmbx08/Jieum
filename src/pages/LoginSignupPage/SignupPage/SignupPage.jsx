@@ -4,8 +4,13 @@ import FirstPage from "./FirstPage/FirstPage";
 import SignupInput from "./components/SignupInput";
 import MajorDropdown from "./components/MajorDropdown";
 import BadgeOverlay from "./Overlay/BadgeOverlay";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
+  const dispatch = useDispatch();
+  const navigate= useNavigate();
+
   const [userName, setUserName]=useState("");
   const [userPhoneNum, setUserPhoneNum]=useState("");
   const [userID,setUserID]=useState("")
@@ -16,20 +21,32 @@ const SignupPage = () => {
   const [showOverlay,setShowOverlay] = useState(false);
   const [interestBadgeArray,setInterestBadgeArray]=useState([]);
 
-  const [page, setPage]= useState(1);
-
   const toggleOverlay=()=>{
     setShowOverlay(!showOverlay);
   }
+
+  const handleFormSubmit=(event)=>{
+    event.preventDefault();
+    console.log("submit data!!");
+    const createdUserData={
+      userName,userPhoneNum,userID,userPassword,studentNum,userAppealPhrase,interestBadgeArray
+    }
+    console.log("유저 정보!",createdUserData);
+    dispatch({type:"CREATE_USERDATA",payload: {userData:createdUserData}});   
+    alert("회원가입이 완료되었습니다.");
+    navigate("./login")
+    //회원가입 완료! 알람 띄우기
+    //로그인 페이지로 이동
+  }
   
   useEffect(()=>{
-    console.log(interestBadgeArray);
+    if("interest Array",interestBadgeArray) console.log(interestBadgeArray);
   },[interestBadgeArray])
 
   return (
     <div className="signup-page justify-middle">
       {/* <FirstPage/> */}
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <h2 className="signup-form-title">백석 지음(知音) 회원가입</h2>
         <div className="signup-container">
           <SignupInput title="이름" setData={setUserName} placeholder="이름을 작성해주세요"/>
@@ -46,7 +63,7 @@ const SignupPage = () => {
         </div>
         
         {showOverlay?(
-          <BadgeOverlay interestBadgeArray={interestBadgeArray} setInterestBadgeArray={setInterestBadgeArray}/>
+          <BadgeOverlay interestBadgeArray={interestBadgeArray} setInterestBadgeArray={setInterestBadgeArray} toggleOverlay={toggleOverlay} handleFormSubmit={handleFormSubmit}/>
         ):""}
 
       </form>
