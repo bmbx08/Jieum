@@ -1,11 +1,20 @@
 let initialState={
     // count:0,
-    // study: {},
+    createdStudyList: [],
 }
 
 // dispatch({type:"CREATE_STUDYGROUP",payload: createdStudyData});
 
 function reducer(state=initialState,action){
+    const {type,payload}= action;
+    switch(type){
+        case "CREATE_STUDYGROUP":
+            return {...state,createdStudyList:[...state.createdStudyList,payload.createdStudyData]}
+        
+        default:
+            return {...state}
+    }
+
     // console.log("action",action)
     // if(action.type === "INCREMENT") {
     //     return {...state,count:state.count+1}

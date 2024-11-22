@@ -42,8 +42,6 @@ const StudyCreatePage = () => {
 
   const [page, setPage] = useState(1);
 
-  const [totalStudyData, setTotalStudyData] = useState({});
-
   const dispatch = useDispatch();
 
   const handleCategoryRadio = (event) => {
@@ -131,10 +129,9 @@ const StudyCreatePage = () => {
         blogContent: blogContent,
       },
     }
-    setTotalStudyData(createdStudyData);
-
-    dispatch({type:"CREATE_STUDYGROUP",payload: createdStudyData});
-    // navigate("/newstudy")
+    dispatch({type:"CREATE_STUDYGROUP",payload: {createdStudyData}});
+    alert("스터디 생성이 완료되었습니다.");
+    navigate("/newstudy");
   }
 
   useEffect(() => {
@@ -275,7 +272,6 @@ const StudyCreatePage = () => {
                   className="content-textarea"
                 />
               </div>
-              <button onClick={console.log(totalStudyData)}>객체 보여주기</button>
             </div>
 
             <div className="navigate-section">
