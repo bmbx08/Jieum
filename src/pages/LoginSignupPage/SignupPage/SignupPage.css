@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 0 30%;
+    font-family: 'Pretendard-Regular';
 }
 
 .signup-form-title{
@@ -106,17 +107,34 @@ select option:first-child{
 .overlay-top-section{
     display:flex;
     align-items: center;
+    margin-bottom: 2em;
+}
+
+.overlay-title{
+    font-size: 1.5em;
+    margin:0;
+}
+
+.overlay-subtitle{
+    font-size: 1em;
+    margin:0;
+    display:flex;
+    
 }
 
 .badge-row{
     display:flex;
     width: 100%;
+    margin-bottom: 2em;
 }
 
 .badge-title{
     width: 10%;
     text-align: center;
     border: 1px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .badge-section{
@@ -124,33 +142,39 @@ select option:first-child{
     border: 1px solid black;
 }
 
-.suggestion-badge{
+.checkbox-wrapper{
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* .suggestion-badge{
     padding: 0.3em 0.8em;
     background-color: beige;
     border-radius: 25%;
     font-size: 0.8em;
     margin-right: 0.4em;
-}
+} */
 
 .interest-checkbox-input{
-    /* display:none; */
+    display:none;
 }
 
 .interest-checkbox-button{
     display: inline-block;
-    padding: 0.4em 1.8em;
-    margin-right: 0.5em;
-    border-radius: 8px;
-    background-color: rgba(184,184,184,255);
+    padding: 0.6em 1.4em;
+    border-radius: 1.5em;
+    background-color: rgba(210,210,210,255);
     font-size: 0.8em;
     text-align: center;
     user-select: none;
     transition: 0.1s ease-in;
-    color: rgba(75,75,75,255)
+    color: rgba(75,75,75,255);
+    cursor: pointer;
 }
 
 .interest-checkbox-button:hover{
-    background-color:rgba(218, 222, 170, 0.5)
+    background-color:rgba(218, 222, 170, 0.7)
 }
 
 .interest-checkbox-button.checked{

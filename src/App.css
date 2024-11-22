@@ -1,0 +1,13 @@
+@font-face{
+    font-family: 'Pretendard-Regular';
+    font-style: 'normal';
+    /* font-weight: 400; */
+    src: url('./fonts/Pretendard-Regular.otf');
+}
+
+@font-face{
+    font-family: 'Pretendard-Bold';
+    font-style: 'normal';
+    /* font-weight: 400; */
+    src: url('./fonts/Pretendard-Bold.otf');
+}
