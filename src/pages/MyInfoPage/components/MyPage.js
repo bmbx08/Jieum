@@ -69,8 +69,13 @@ const MyPage = () => {
     <div className="myPage">
       <h1 className="myPage-title">마이페이지</h1>
       <div className="myPage-profile-box">
-        <img src={bg} className="profile-box-bg" alt="background" />
-        {/* <AccountCircleIcon className="user-profile-icon" /> */}
+        {/* <img src={bg} className="profile-box-bg" alt="background" /> */}
+        <AccountCircleIcon className="user-profile-icon" />
+        <p className="user-profile-item">
+          <strong>{userInfo.name}</strong>
+          {userInfo.department} <br />
+          {userInfo.studentNum}
+        </p>
       </div>
       <div className="user-info-box">
         {!isEditing ? (
