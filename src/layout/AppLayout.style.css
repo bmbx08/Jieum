@@ -17,11 +17,11 @@
     margin-left:5em;
 }
 
-.user-section{
+/* .user-section{
     display: flex;
     margin-right: 5em;
     font-size: 0.8em;
-}
+} */
 
 .profile-image{
     width: 1.5em;
@@ -29,3 +29,12 @@
     border-radius: 1.5em;
     margin-right: 0.5em;
 }
+
+.sidebar-container {
+    flex: 0 0 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* z-index: 1000; */
+  }

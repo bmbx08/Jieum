@@ -10,10 +10,13 @@ const AppLayout = () => {
     <div>
       <div className="navbar">
         <div className="site-title-section">백석 지음(知音)</div>
-        <div className="user-section">
+        {/* <div className="user-section">
           <img src={profileImg} className="profile-image" />
           <div>{userName} 님</div>
-        </div>
+        </div> */}
+      </div>
+      <div>
+
       </div>
       <SideBar/>
       <Outlet /> {/*네브바 고정 위해 필요*/}
