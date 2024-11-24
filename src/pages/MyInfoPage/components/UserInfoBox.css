@@ -1,0 +1,31 @@
+.userInfo-box {
+  border-radius: 0.6rem;
+  border: 2px solid #dbdcdd;
+  background-color: #ffffff;
+  margin-top: 3rem;
+  padding: 1.6rem;
+  width: 50%;
+}
+
+.userInfo-box p {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.userInfo-box strong {
+  color: #7a7a7a;
+  font-weight: bold;
+  margin-right: 1rem;
+  min-width: 86px;
+}
+
+.info-edit-btn {
+  border: none;
+  border-radius: 0.5rem;
+  width: 5rem;
+  padding: 0.3rem;
+  background-color: #dbdcdd;
+  color: #7a7a7a;
+  font-weight: bold;
+}
