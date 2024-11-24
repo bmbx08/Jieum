@@ -120,19 +120,19 @@ const StudyCreatePage = () => {
         subject: subjectInputContent, //과목(string)
         studyPeriod: studyPeriod, //스터디 기간(number)
         recruitSize: recruitNumber, //모집인원(number)
-        limitlessRecruit: limitlessRecruitBoolean, //제한없음 유무(boolean)
-        interestBadgeArray: interestBadgeArray, //관심 항목 배열(배열)
+        limitlessRecruit: limitlessRecruitBoolean, //인원제한없음 유무(boolean)
+        interestBadgeArray: interestBadgeArray, //관심 항목 배열(array)
       },
-      weeklySchedule:scheduleValuesObject, //주차별 계획 객체(string값 담은 객체)
+      weeklySchedule:scheduleValuesObject, //주차별 계획 객체(object(string값들 담음))
       blogPostContent:{ 
         blogTitle: blogTitle, //게시판 제목(string)
         blogContent: blogContent, //게시판 내용(string)
       },
     }
-    console.log("스터디 객체",createdStudyData)
+    console.log("스터디 객체",createdStudyData) //정보들 입력하고 등록 누르면 console에서 확인 가능
     dispatch({type:"CREATE_STUDYGROUP",payload: {createdStudyData}});
     alert("스터디 생성이 완료되었습니다.");
-    // navigate("/newstudy");
+    navigate("/newstudy");
   }
 
   useEffect(() => {
