@@ -3,6 +3,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import './MyPage.css';
 import UserInfoBox from './UserInfoBox';
 import UserInfoEdit from './UserInfoEdit';
+import bg from './img/userInfo-bg.png';
 
 const MyPage = () => {
   const [userInfo, setUserInfo] = useState({
@@ -58,11 +59,10 @@ const MyPage = () => {
 
   return (
     <div className="myPage">
-      <div className="myPage-title">
-        <h1>마이페이지</h1>
-      </div>
+      <h1 className="myPage-title">마이페이지</h1>
       <div className="myPage-profile-box">
-        <AccountCircleIcon className="user-profile-icon" />
+        <img src={bg} className="profile-box-bg" alt="background" />
+        {/* <AccountCircleIcon className="user-profile-icon" /> */}
       </div>
       <div className="user-info-box">
         {!isEditing ? (

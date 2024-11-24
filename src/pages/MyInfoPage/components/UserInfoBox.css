@@ -1,8 +1,10 @@
 .userInfo-box {
+  display: flex;
+  flex-direction: column;
   border-radius: 0.6rem;
   border: 2px solid #dbdcdd;
   background-color: #ffffff;
-  margin-top: 3rem;
+  margin-top: 2rem;
   padding: 1.6rem;
   width: 50%;
 }
@@ -10,7 +12,7 @@
 .userInfo-box p {
   margin-bottom: 1rem;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .userInfo-box strong {
@@ -21,6 +23,7 @@
 }
 
 .info-edit-btn {
+  align-self: flex-end;
   border: none;
   border-radius: 0.5rem;
   width: 5rem;
