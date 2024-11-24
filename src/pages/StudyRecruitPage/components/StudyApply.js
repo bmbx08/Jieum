@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// npm install sweetalert2
 import Swal from 'sweetalert2';
 import './StudyApply.css';
 
@@ -10,14 +11,14 @@ const StudyApply = ({ onApplicantAdd, userName }) => {
         icon: 'success',
         title: '신청되었습니다',
         showConfirmButton: false,
-        timer: 1500,
+        timer: 3000,
       });
       return;
     }
 
     const newApplicant = {
       name: userName,
-      timestapm: new Date().toLocaleString(),
+      timestamp: new Date().toLocaleString(),
     };
 
     onApplicantAdd(newApplicant);
