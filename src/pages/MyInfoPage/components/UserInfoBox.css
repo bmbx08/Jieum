@@ -1,6 +1,7 @@
 .userInfo-box {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-radius: 0.6rem;
   border: 2px solid #dbdcdd;
   background-color: #ffffff;
