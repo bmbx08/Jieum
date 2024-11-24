@@ -17,6 +17,7 @@ const MyPage = () => {
   });
   console.log('userInfo:', userInfo);
 
+  const [originalUserInfo, setOriginalUserInfo] = useState(userInfo);
   const [isEditing, setIsEditing] = useState(false);
 
   const fields = [
@@ -43,6 +44,7 @@ const MyPage = () => {
         determination: '리액트 빠이또',
       };
       setUserInfo(userdata);
+      setOriginalUserInfo(userInfo);
     };
     fetchUserData();
   }, []);
@@ -54,7 +56,13 @@ const MyPage = () => {
 
   const handleSave = () => {
     setIsEditing(false);
+    setOriginalUserInfo(userInfo);
     console.log('updated user info:', userInfo);
+  };
+
+  const handleCancel = () => {
+    setIsEditing(false);
+    setUserInfo(originalUserInfo);
   };
 
   return (
@@ -77,7 +85,7 @@ const MyPage = () => {
             fields={fields}
             onChange={handleChange}
             onSave={handleSave}
-            onCancel={() => setIsEditing(false)}
+            onCancel={handleCancel}
           />
         )}
       </div>

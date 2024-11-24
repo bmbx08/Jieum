@@ -11,7 +11,7 @@ const UserInfoEdit = ({ userInfo, fields, onChange, onSave, onCancel }) => {
             <input
               type={field.name === 'password' ? 'password' : 'text'}
               name={field.name}
-              vlaue={userInfo[field.name]}
+              value={userInfo[field.name]}
               onChange={onChange}
             />
           </label>
