@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Check.css';
 import PostTitle from './PostTitle';
 import StudyForm from './StudyForm';
-import UserComment from './UserComment';
+import UserComment from './comment/UserComment';
 import StudyApply from './StudyApply';
 import ReactionBox from './ReactionBox';
 
