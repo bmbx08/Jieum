@@ -10,17 +10,21 @@ const Check = () => {
   // const [applicants, setApplicants] = useState([]);
   const [comments, setComments] = useState([]);
 
-  const studyData = {
-    category: '#웹프로그래밍 #리액트',
-    duration: 4,
-    maxParticipants: 6,
-    description: '간단히 복습하고 프로젝트 진행할 분 구합니다.',
-    schedule: [
-      'HTML & CSS 기초 학습, JavaScript 기본 문법 복습',
-      'React 기본 및 컴포넌트 구조 이해',
-      '간단한 웹 프로젝트 진행',
-      '고급 웹 프로젝트 완성',
-    ],
+  const createdStudyData = {
+    studyInfo: {
+      category: '전공', //카테고리(string)
+      subCategory: '컴퓨터공학부', //서브 카테고리 (string)
+      subject: 'C언어 프로그래밍', //과목(string)
+      studyPeriod: 4, //스터디 기간
+      recruitSize: 7, //모집인원(number)
+      limitlessRecruit: false, //인원 제한 유무 (boolean)
+      interestBadgeArray: ['전공', '컴퓨터공학부', 'C언어 프로그래밍'], //관심 항목 배열(array)
+    },
+    weeklySchedule: [week1:], //주차별 계획 객체 (obj : string값)
+    blogPostContent: {
+      blogTitle: blogTitle, //게시판 제목(string)
+      blogContent: blogContent, //게시판 내용(string)
+    },
   };
 
   const handleApplicantAdd = (newApplicant) => {

@@ -19,11 +19,11 @@ const SideBar = () => {
             </li>
             <li className="sidebarListItem">
               <FavoriteBorderIcon className="sidebarIcon" />
-              관심 목록
+              스터디 신청
             </li>
             <li className="sidebarListItem">
               <BrowserUpdatedIcon className="sidebarIcon" />
-              신청 목록
+              마이페이지
             </li>
             <li className="sidebarListItem">
               <SettingsIcon className="sidebarIcon" />

@@ -9,9 +9,9 @@ const StudyApply = ({ onApplicantAdd, userName }) => {
       Swal.fire({
         position: 'top',
         icon: 'success',
-        title: '신청되었습니다',
+        title: `${userName}님이 신청되었습니다.`,
         showConfirmButton: false,
-        timer: 3000,
+        timer: 1500,
       });
       return;
     }
@@ -22,14 +22,6 @@ const StudyApply = ({ onApplicantAdd, userName }) => {
     };
 
     onApplicantAdd(newApplicant);
-
-    Swal.fire({
-      position: 'top',
-      icon: 'success',
-      title: `#{userName}님이 신청되었습니다.`,
-      showConfirmButton: false,
-      timer: 1500,
-    });
   };
 
   return (
