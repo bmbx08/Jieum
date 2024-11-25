@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./ChecklistPage.css";
 
-// WeekChecklist Component (빨간색 - 체크리스트 항목)
+// WeekChecklist Component
 const WeekChecklist = ({ week, description, link }) => {
   return (
     <div className="week-checklist">
@@ -16,7 +16,7 @@ const WeekChecklist = ({ week, description, link }) => {
   );
 };
 
-// MemberProgress Component (빨간색 - 멤버 이름)
+// MemberProgress Component
 const MemberProgress = ({ name }) => {
   return (
     <div className="members-name">
@@ -26,12 +26,15 @@ const MemberProgress = ({ name }) => {
   );
 };
 
-// ProgressSection Component (파란색 - 진행 상황 섹션)
+// ProgressSection Component
 const ProgressSection = ({ week, title, progress }) => {
   return (
     <div className="progress-section">
       <div className="Cl-header">
         <h4 className="Cl-study-title">웹프로그래밍</h4>
+        <a href="/studyAdmin" className="goToAdmin">
+          스터디 관리 바로가기
+        </a>
       </div>
       <div className="progress-container">
         <div className="weekly-content">
@@ -53,7 +56,7 @@ const ProgressSection = ({ week, title, progress }) => {
   );
 };
 
-// MembersContent Component (파란색 - 멤버 진행 상황 섹션)
+// MembersContent Component
 const MembersContent = ({ members }) => {
   return (
     <div className="members-content">
@@ -65,7 +68,7 @@ const MembersContent = ({ members }) => {
   );
 };
 
-// ChecklistContent Component (파란색 - 체크리스트 섹션)
+// ChecklistContent Component
 const ChecklistContent = ({ weeks }) => {
   return (
     <div className="checklist-content">
