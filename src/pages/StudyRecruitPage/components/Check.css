@@ -22,10 +22,17 @@
 .study-recruit-check-box {
   border: 2px solid #dbdbdb;
   border-radius: 0.5rem;
-  width: 80%;
+  width: 90%;
+  max-width: 800px;
+  height: 90vh;
+  max-height: 90vh;
   padding: 2rem;
-  /* margin: auto; */
+  margin: auto;
   background-color: #fafafa;
+  box-sizing: border-box;
+}
+
+.study-recruit-check-box > * {
 }
 
 /* 설명 텍스트 */
