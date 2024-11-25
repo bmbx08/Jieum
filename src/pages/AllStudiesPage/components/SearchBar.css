@@ -1,6 +1,7 @@
 .study-search {
   position: relative;
-  width: 50%;
+  width: 100%;
+  margin-bottom: 1.5em;
 }
 
 .study-search input {

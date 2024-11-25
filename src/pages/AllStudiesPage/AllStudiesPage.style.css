@@ -1,6 +1,7 @@
 .app-container {
-  display: flex;
+  /* display: flex; */
   height: 100vh;
+  /* font-family: "Pretendard-Regular"; */
 }
 
 .sidebar-container {
@@ -24,11 +25,12 @@
 
 /* 홈페이지 좌우 공간 조절 */
 .left-box {
-  width: 70%; /*왼쪽 박스 공간 크기*/
+  width: 60%; /*왼쪽 박스 공간 크기*/
+  padding: 0 6em;
   /* height: 50em; */
 }
 
 .right-box {
-  width: 30%; /*오른쪽 박스 공간 크기*/
+  width: 40%; /*오른쪽 박스 공간 크기*/
   /* height: 50em; */
 }

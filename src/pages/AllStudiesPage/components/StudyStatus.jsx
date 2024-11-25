@@ -15,10 +15,10 @@ const StudyStatus = () => {
 
   return (
     <div className="study-status-box">
-      <h3 className="studyStatus-title">스터디 현황</h3>
+      <div className="studyStatus-title">스터디 현황</div>
       <div className="study-status">
         <div className="status-content">
-          <h4 className="content-title">참여 중</h4>
+          <div className="content-title">참여 중</div>
           <ul className="status-list">
             {ongoingStudies.map((study, index) => (
               <li key={index}>{study}</li>
