@@ -19,7 +19,7 @@
   margin-left: 240px;
   flex: 1;
   padding: 1rem;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   display: flex;
   justify-content: center;
   background-color: #fafafa;
