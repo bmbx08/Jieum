@@ -6,7 +6,8 @@
 }
 
 .sidebar-container {
-  flex: 0 0 300px;
+  /* flex: 0 0 300px; */
+  width: 23%;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -15,8 +16,8 @@
 }
 
 .main-container {
-  position: relative;
-  margin-left: 240px;
+  /* position: relative; */
+  margin-left: 23%;
   flex: 1;
   padding: 1rem;
   /* overflow-y: auto; */
