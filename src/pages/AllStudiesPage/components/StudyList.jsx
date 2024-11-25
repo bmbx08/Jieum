@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import './StudyList.css';
 
 const StudyList = ({ selectedTab }) => {
@@ -7,6 +9,7 @@ const StudyList = ({ selectedTab }) => {
   const allItems = [
     {
       id: 1,
+      subject: "파이썬프로그래밍",
       interestBadgeArray: ['#전공','#컴퓨터공학부','#파이썬 프로그래밍'],
       blogPostContent:{
         blogTitle: '파이썬 스터디 할 분 모집'
@@ -15,6 +18,7 @@ const StudyList = ({ selectedTab }) => {
     },
     { 
       id: 2, 
+      subject: "웹프로그래밍",
       interestBadgeArray: ['#자기개발','#개발','#웹프로그래밍'], 
       blogPostContent:{
         blogTitle:'웹 개발 스터디 모집'
@@ -22,6 +26,7 @@ const StudyList = ({ selectedTab }) => {
       category: '전공' },
     { 
       id: 3, 
+      subject: "인문학",
       interestBadgeArray: ['#자기개발','#어학','#인문학'], 
       blogPostContent:{
         blogTitle:'인문학 독서 모임'
@@ -29,6 +34,7 @@ const StudyList = ({ selectedTab }) => {
       category: '교양' },
     {
       id: 4,
+      subject: "기독교세계관",
       interestBadgeArray: ['#교양','#사랑의 실천','#기독교세계관'],
       blogPostContent:{
         blogTitle:'자기개발 스터디 모집'
@@ -42,19 +48,30 @@ const StudyList = ({ selectedTab }) => {
   );
 
   return (
-    <div className="study-list">
+    <div className="study-section">
       <div className='study-list-title'>스터디 모집 글</div>
       <div className="study-items">
         {filteredItems.map((item) => (
           <div className="study-item" key={item.id}>
-            <div className='tag-section'>
-              <span className='list-badge-style'>모집중</span>
+            <div className='badge-section'>
+              <span className='list-badge-style recruit-badge'>모집중</span>
               {item.interestBadgeArray.map((badge)=>(
                 <span className='list-badge-style'>{badge}</span>
               ))}
             </div>
             
-            <p className="studyItem-title">{item.blogPostContent.blogTitle}</p>
+            <div className='study-item-title-section'>
+              <div className='study-item-subtitle sub-text'>#{item.subject}</div>
+              <div className="study-item-title">{item.blogPostContent.blogTitle}</div>
+            </div>
+
+            <div className='study-item-button-section'>
+              <FavoriteBorderIcon className="study-item-icon" />
+              <div className="icon-number">{item.likes||0}</div>
+              <ArchiveOutlinedIcon className="study-item-icon"/>
+              <div className="icon-number">{item.favorites||2}</div>
+            </div>
+            
           </div>
         ))}
       </div>

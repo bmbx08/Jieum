@@ -18,18 +18,24 @@ const StudyStatus = () => {
       <div className="studyStatus-title">스터디 현황</div>
       <div className="study-status">
         <div className="status-content">
-          <div className="content-title">참여 중</div>
+          <div className="content-title">
+            <div className='circle green-circle'></div>
+            참여 중
+          </div>
           <ul className="status-list">
             {ongoingStudies.map((study, index) => (
-              <li key={index}>{study}</li>
+              <li key={index} className="status-item">{study}</li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="content-title">완료</h4>
+          <div className="content-title">
+            <div className='circle gray-circle'></div>
+            완료
+          </div>
           <ul className="status-list">
             {completedStudies.map((study, index) => (
-              <li key={index}>{study}</li>
+              <li key={index} className='status-item'>{study}</li>
             ))}
           </ul>
         </div>

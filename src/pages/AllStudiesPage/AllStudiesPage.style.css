@@ -1,7 +1,7 @@
 .app-container {
   /* display: flex; */
   height: 100vh;
-  /* font-family: "Pretendard-Regular"; */
+  font-family: "Pretendard-Regular";
 }
 
 .sidebar-container {
