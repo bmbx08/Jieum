@@ -1,4 +1,6 @@
 .app-container {
+  font-family: "Pretendard-Regular";
+  /* font-family: "Pretendard-Bold"; */
   display: flex;
   flex-direction: row;
   height: 100vh;
