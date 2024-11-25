@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import './SignupPage.css';
+import './SignupPage.style.css';
 import FirstPage from "./FirstPage/FirstPage";
 import SignupInput from "./components/SignupInput";
 import MajorDropdown from "./components/MajorDropdown";

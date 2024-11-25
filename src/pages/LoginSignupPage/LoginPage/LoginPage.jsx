@@ -1,15 +1,12 @@
-import React from "react";
-import './LoginPage.css';
-import { useSelector } from "react-redux";
-
+import React from 'react'
+import "./LoginPage.style.css"
 
 const LoginPage = () => {
-  // const userData=useSelector(state=>state.userData)
   return (
     <div>
-     Login Page
+      LoginPage
     </div>
-  );
-};
+  )
+}
 
-export default LoginPage;
+export default LoginPage
