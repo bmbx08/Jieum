@@ -119,26 +119,19 @@
 
 .custom-progress-bar .progress-bar {
     background-color: #8D9429;
-    /* 기존 색상 유지 */
-    height: 30px;
-    /* 원하는 높이 설정 */
-    line-height: 30px;
-    /* 텍스트 세로 정렬 */
-    font-size: 14px;
-    /* 텍스트 크기 조정 */
-    border-radius: 5px;
-    /* 둥근 모서리 추가 */
+    height: 100%; /* 부모의 높이와 맞춤 */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    /* 텍스트 가운데 정렬 */
+    align-items: center; /* 텍스트 수직 정렬 */
+    justify-content: center; /* 텍스트 수평 정렬 */
+    font-size: 14px; /* 텍스트 크기 */
+    border-radius: 5px; /* 둥근 모서리 */
 }
 
 .custom-progress-bar {
-    height: 30px;
-    /* 전체 ProgressBar의 높이 설정 */
+    height: 30px; /* ProgressBar의 높이 */
+    display: flex;
+    align-items: center; /* 텍스트 수직 정렬 */
 }
-
 .members-header-text {
     font-size: 1.1em;
     margin-bottom: 3px;
@@ -177,5 +170,11 @@
 }
 
 .week-todo {
-    margin-top: 8px;
+    margin-top: 5px;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
+.week-todo:hover {
+    text-decoration: underline; /* 호버 시 밑줄 */
+  }
