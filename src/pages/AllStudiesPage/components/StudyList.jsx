@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './StudyList.css';
-import SearchBar from './SearchBar';
 
 const StudyList = ({ selectedTab }) => {
   //초기 데이터 예시!!! 새로운 게시물 등록 시 이 배열에 추가될 수 있도록....
@@ -27,8 +26,8 @@ const StudyList = ({ selectedTab }) => {
 
   return (
     <div className="study-list">
-      <SearchBar />
       <div className="study-items">
+        <div>스터디 모집 글</div>
         {filteredItems.map((item) => (
           <div className="study-item" key={item.id}>
             <p>{item.tag}</p>

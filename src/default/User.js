@@ -46,10 +46,10 @@ const User = () => {
           </Dropdown.Menu>
         )}
 
-        <div className="notification">
+        {/* <div className="notification">
           <NotificationsNoneIcon />
           <span className="notifyBadge">{notificationCount}</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
