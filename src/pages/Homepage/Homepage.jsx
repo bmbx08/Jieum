@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+import React from 'react'
 
 const Homepage = () => {
   return (
@@ -9,6 +8,4 @@ const Homepage = () => {
   )
 }
 
-
-
-export default Homepage;
+export default Homepage
