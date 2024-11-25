@@ -134,24 +134,30 @@
 }
 .members-header-text {
     font-size: 1.1em;
-    margin-bottom: 3px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-
 .user-icon {
-    font-size: 1.2em;
-    margin-right: 3px;
+    font-size: 1.5em;
+    margin-right: 5px;
+    color: #555;
 }
-
 .members-name {
-    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    position: relative;
 }
 
 .members-name-text {
-    color: gray;
-    font-size: 0.8em;
+    color: #333;
+    font-size: 0.9em;
     cursor: pointer;
 }
-.members-name-text
+.members-name-text:hover {
+    text-decoration: underline;
+}
 
 .check-header-text {
     font-weight: bold;
