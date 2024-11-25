@@ -1,6 +1,7 @@
 .comment-container {
   display: flex;
   flex-direction: column;
+  margin: 0.5rem 0;
 }
 
 .reply-comment {
@@ -58,10 +59,10 @@
 .textarea-comment {
   border: none;
   resize: none;
-  padding: 0.5rem;
+  padding: 0.4rem;
   color: #818181;
   margin: 0.5rem 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   width: 90%;
   background: none;
 }
@@ -82,7 +83,7 @@
 .comment-input-container {
   border: 2px solid #b1b1b1;
   border-radius: 0.7rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
