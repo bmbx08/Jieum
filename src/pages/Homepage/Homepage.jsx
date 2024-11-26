@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+import React from 'react';
+import './Homepage.style.css';
 
 const Homepage = () => {
   return (
     <div>
       Homepage
     </div>
-  )
-}
-
-
+  );
+};
 
 export default Homepage;

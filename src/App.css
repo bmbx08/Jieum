@@ -1,0 +1,39 @@
+@font-face{
+    font-family: 'Pretendard-Regular';
+    font-style: 'normal';
+    src: url('./fonts/Pretendard-Regular.otf');
+}
+
+@font-face{
+    font-family: 'Pretendard-Bold';
+    font-style: 'normal';
+    src: url('./fonts/Pretendard-Bold.otf');
+}
+
+.font-regular{
+    font-family: 'Pretendard-Regular';
+}
+
+.font-bold{
+    font-family: 'Pretendard-Bold';
+}
+
+.text-color{
+    color:#191919;
+}
+
+.sub-text{
+    color: #7A7A7A;
+}
+
+.main-color{
+    color: #DADEAA
+}
+
+.main-color2{
+    color: #4C4E33
+}
+
+.click-color{
+    color:#8D9429
+}
