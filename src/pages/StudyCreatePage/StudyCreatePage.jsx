@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import "./StudyCreatePage.style.css";
 import CategoryRadioGroup from "./components/CategoryRadioGroup";
 import DropdownOne from "./components/DropdownOne";
-import DropdownTwo from "./components/DropdownTwo";
+// import DropdownTwo from "./components/DropdownTwo";
 import BadgeGroup from "./components/BadgeGroup";
 import StudyTable from "./components/StudyTable";
 import SubjectSearchInput from "./components/SubjectSearchInput";
