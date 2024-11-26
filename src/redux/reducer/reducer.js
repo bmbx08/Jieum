@@ -1,8 +1,7 @@
 let initialState={
     userData:{},
+    createdStudyList: [],
 }
-
-
 
 function reducer(state=initialState,action){
     const {type,payload}=action;
@@ -10,6 +9,9 @@ function reducer(state=initialState,action){
         case "CREATE_USERDATA":
             console.log("store is accessed!!")
             return{...state,userData:payload.userData}
+
+        case "CREATE_STUDYGROUP":
+            return {...state,createdStudyList:[...state.createdStudyList,payload.createdStudyData]}
 
         default:
             return{...state}
