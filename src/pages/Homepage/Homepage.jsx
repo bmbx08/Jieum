@@ -1,12 +1,11 @@
-import React from 'react';
-import './Homepage.style.css';
+import React from 'react'
 
 const Homepage = () => {
   return (
     <div>
       Homepage
     </div>
-  );
-};
+  )
+}
 
-export default Homepage;
+export default Homepage

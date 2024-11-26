@@ -1,11 +1,11 @@
-import './StudyRecruitPage.style.css';
+import React from 'react'
 
-function StudyRecruitPage() {
+const StudyRecruitPage = () => {
   return (
     <div>
       Study Recruit Page
     </div>
-  );
+  )
 }
 
-export default StudyRecruitPage;
+export default StudyRecruitPage
