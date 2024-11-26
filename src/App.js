@@ -13,6 +13,7 @@ import MyInfoPage from "./pages/MyInfoPage/MyInfoPage";
 import AllStudiesPage from "./pages/AllStudiesPage/AllStudiesPage";
 
 
+
 function App() {
   return (
     <div>
