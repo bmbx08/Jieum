@@ -1,0 +1,51 @@
+.register-header {
+    font-weight: bold;
+    color: rgb(143, 144, 102);
+}
+.mb-4 {
+    width: 70%;
+    max-width: 400px;
+    max-height: 200px;
+    margin: 0 auto;
+
+}
+.display-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.register-link .goToRegister {
+    color: rgb(143, 144, 102);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.register-link .goToRegister:hover {
+    text-decoration: underline;
+}
+
+.register-container {
+    border: 1px solid lightgray;
+    width: 600px;
+    height: 550px;
+    background-color: white;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.password-check {
+    margin-top: 10px;
+}
+
+.register-area {
+    flex: 1;
+}
+
+/* 이 css 적용안해도 저절로 css 되어잇던데 느낌이 쎄합니다.. 나중에 무조건 충돌 일어날거만같은... */

@@ -14,6 +14,7 @@ import AllStudiesPage from "./pages/AllStudiesPage/AllStudiesPage";
 
 
 
+
 function App() {
   return (
     <div>
