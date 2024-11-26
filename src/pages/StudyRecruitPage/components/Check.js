@@ -7,28 +7,35 @@ import StudyApply from './StudyApply';
 import ReactionBox from './ReactionBox';
 
 const Check = () => {
-  // const [applicants, setApplicants] = useState([]);
+  const [applicants, setApplicants] = useState([]);
   const [comments, setComments] = useState([]);
 
+  //우선 초기값 설정해 뒀습니다!!!
   const createdStudyData = {
     studyInfo: {
-      category: '전공', //카테고리(string)
-      subCategory: '컴퓨터공학부', //서브 카테고리 (string)
-      subject: 'C언어 프로그래밍', //과목(string)
-      studyPeriod: 4, //스터디 기간
-      recruitSize: 7, //모집인원(number)
-      limitlessRecruit: false, //인원 제한 유무 (boolean)
-      interestBadgeArray: ['전공', '컴퓨터공학부', 'C언어 프로그래밍'], //관심 항목 배열(array)
+      category: '전공',
+      subCategory: '컴퓨터공학부',
+      subject: 'C언어 프로그래밍',
+      studyPeriod: 4,
+      recruitSize: 7,
+      limitlessRecruit: false,
+      interestBadgeArray: ['전공', '컴퓨터공학부', 'C언어 프로그래밍'],
     },
-    weeklySchedule: [week1:], //주차별 계획 객체 (obj : string값)
+    weeklySchedule: {
+      week1: '스터디 재미있게 해요~',
+      week2: '스터디 재미잇게 해여',
+      week3: '우아아아아아아아아악',
+      week4: '짱구는 못 말려',
+    },
     blogPostContent: {
-      blogTitle: blogTitle, //게시판 제목(string)
-      blogContent: blogContent, //게시판 내용(string)
+      blogTitle: '리액트 스터디 모집합니다.',
+      blogContent: '스터디 같이 해여',
     },
+    authorName: '정기찬',
   };
 
   const handleApplicantAdd = (newApplicant) => {
-    console.log('현재 신청자 목록:', newApplicant);
+    setApplicants((prevApplicants) => [...prevApplicants, newApplicant]);
   };
 
   //댓글 추가
@@ -59,17 +66,24 @@ const Check = () => {
 
   return (
     <div className="study-recruit-check-box">
-      <PostTitle />
+      <PostTitle
+        blogPostContent={createdStudyData.blogPostContent}
+        authorName={createdStudyData.authorName}
+      />
       <StudyForm
-        category={studyData.category}
-        duration={studyData.duration}
-        maxParticipants={studyData.maxParticipants}
-        schedule={studyData.schedule}
+        studyInfo={createdStudyData.studyInfo}
+        weeklySchedule={createdStudyData.weeklySchedule}
       />
 
-      <p className="study-description">{studyData.description}</p>
+      <p className="study-description">
+        {createdStudyData.blogPostContent.blogContent}
+      </p>
 
-      <StudyApply onApplicantAdd={handleApplicantAdd} />
+      <StudyApply
+        onApplicantAdd={handleApplicantAdd}
+        userName={'고하늘'}
+        studyInfo={createdStudyData.studyInfo}
+      />
       <ReactionBox commentCount={totalCommentCount} />
       <UserComment onCommentAdd={handleCommentAdd} />
     </div>
