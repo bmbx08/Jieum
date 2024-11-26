@@ -1,16 +1,20 @@
 let initialState={
-    // count:0,
+    userData:{},
 }
 
 
 
 function reducer(state=initialState,action){
-    // console.log("action",action)
-    // if(action.type === "INCREMENT") {
-    //     return {...state,count:state.count+1}
-    // }
+    const {type,payload}=action;
+    switch(type){
+        case "CREATE_USERDATA":
+            console.log("store is accessed!!")
+            return{...state,userData:payload.userData}
 
-    return{...state};
+        default:
+            return{...state}
+            
+    }
 }
 
 export default reducer;
