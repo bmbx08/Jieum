@@ -53,7 +53,7 @@ const StudyList = ({ selectedTab }) => {
       <div className="study-items">
         {filteredItems.map((item) => (
           <div className="study-item" key={item.id}>
-            <div className='badge-section'>
+            <div className='item-badge-section'>
               <span className='list-badge-style recruit-badge'>모집중</span>
               {item.interestBadgeArray.map((badge)=>(
                 <span className='list-badge-style'>{badge}</span>
