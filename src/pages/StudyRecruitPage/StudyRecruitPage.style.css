@@ -1,5 +1,5 @@
-.app-container {
-  font-family: "Pretendard-Regular";
+.studyRecruit-page {
+  font-family: 'Pretendard-Regular';
   /* font-family: "Pretendard-Bold"; */
   display: flex;
   flex-direction: row;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.sidebar-container {
+.studyRecruit-sidebar-container {
   /* flex: 0 0 300px; */
   width: 23%;
   height: 100vh;
@@ -17,7 +17,7 @@
   z-index: 1000;
 }
 
-.main-container {
+.studyRecruit-main-container {
   /* position: relative; */
   margin-left: 23%;
   flex: 1;

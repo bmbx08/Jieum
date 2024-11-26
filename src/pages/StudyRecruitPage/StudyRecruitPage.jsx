@@ -5,11 +5,11 @@ import SideBar from '../../default/SideBar';
 
 function StudyRecruitPage() {
   return (
-    <div className="app-container">
-      <div className="sidebar-container">
+    <div className="studyRecruit-page">
+      <div className="studyRecruit-sidebar-container">
         <SideBar />
       </div>
-      <div className="main-container">
+      <div className="studyRecruit-main-container">
         <Check />
       </div>
     </div>

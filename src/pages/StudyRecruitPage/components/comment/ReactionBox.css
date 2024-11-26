@@ -12,9 +12,13 @@
   cursor: pointer;
 }
 
+.reaction-item span {
+  margin-right: 0.3rem;
+}
+
 .like-icon,
 .liked-icon,
 .comment-icon {
-  font-size: 0.8rem;
-  margin-right: 0.3rem;
+  font-size: 0.9rem;
+  margin-right: 0.2rem;
 }

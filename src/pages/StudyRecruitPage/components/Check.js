@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Check.css';
-import PostTitle from './PostTitle';
+import PostTitle from '../PostUpContainer/PostTitle';
 import StudyForm from './StudyForm';
 import UserComment from './comment/UserComment';
 import StudyApply from './StudyApply';
-import ReactionBox from './ReactionBox';
+import ReactionBox from './comment/ReactionBox';
 
 const Check = () => {
   const [applicants, setApplicants] = useState([]);

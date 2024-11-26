@@ -26,7 +26,7 @@ const ReactionBox = ({ commentCount }) => {
         ) : (
           <FavoriteBorderIcon className="like-icon" />
         )}
-        <span>{`좋아요 ${likes}`}</span>
+        <span>{`관심 ${likes}`}</span>
       </div>
       <div className="reaction-item">
         <ModeCommentIcon className="comment-icon" />
