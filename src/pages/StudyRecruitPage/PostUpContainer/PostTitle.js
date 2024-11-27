@@ -16,7 +16,7 @@ const PostTitle = ({ blogPostContent, authorName }) => {
           {isRecruiting ? '모집 중' : '모집 완료'}
         </Button>
       </div>
-      <PostProfile userName={authorName} />
+      <PostProfile authorName={authorName} />
     </div>
   );
 };

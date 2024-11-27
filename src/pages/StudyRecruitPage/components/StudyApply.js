@@ -16,7 +16,7 @@ const StudyApply = ({ onApplicantAdd, userName, studyInfo }) => {
       if (result.isConfirmed) {
         Swal.fire({
           title: '신청 완료되었습니다',
-          text: '마이페이지에서 내역을 확안해 보세요',
+          text: '마이페이지에서 내역을 확인해 보세요',
           icon: 'success',
         });
       }
@@ -26,7 +26,7 @@ const StudyApply = ({ onApplicantAdd, userName, studyInfo }) => {
       name: userName,
       category: studyInfo.category,
       blogTitle: studyInfo.blogTitle,
-      authorName: studyInfo.authorName,
+      authorName: studyInfo.authorName, //스터디 글 작성자 이름
       timestamp: new Date().toLocaleString(),
     };
 
