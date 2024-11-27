@@ -11,7 +11,8 @@ import StudyInfoPage from "./pages/StudyInfoPage/StudyInfoPage";
  import StudyRecruitPage from "./pages/StudyRecruitPage/StudyRecruitPage";
 import MyInfoPage from "./pages/MyInfoPage/MyInfoPage";
 import AllStudiesPage from "./pages/AllStudiesPage/AllStudiesPage";
-
+import StudyAdminPage from "./pages/StudyAdminPage/StudyAdminPage";
+import EditPlanPage from "./pages/EditPlanPage/EditPlanPage";
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
           <Route path="login" element={<LoginPage/>}/>
           <Route path="signup" element={<SignupPage/>}/>
           <Route path="myinfo" element={<MyInfoPage/>}/>
+          <Route path="studyAdmin" element={<StudyAdminPage/>}/>
+          <Route path="studyAdmin/edit/:week" element={<EditPlanPage/>} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />

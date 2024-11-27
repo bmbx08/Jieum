@@ -1,0 +1,24 @@
+.admin-page-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.study-plan-container {
+    margin-top: 20px;
+}
+
+.study-plan-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.edit-icon {
+    cursor: pointer;
+    color: #888;
+}
+
+.edit-icon:hover {
+    color: #555;
+}
