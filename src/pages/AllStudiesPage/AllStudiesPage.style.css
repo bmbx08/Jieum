@@ -1,18 +1,18 @@
-.app-container {
+.allstudies-page {
   /* display: flex; */
+  margin-top: 12vh;
+  padding-top: 0.6em;
   height: 100vh;
   font-family: "Pretendard-Regular";
 }
 
-.sidebar-container {
-  /* flex: 0 0 500px; */
+/* .sidebar-container {
   width: 23%;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  /* z-index: 1000; */
-}
+} */
 
 .main-container {
   margin-top: 2rem;

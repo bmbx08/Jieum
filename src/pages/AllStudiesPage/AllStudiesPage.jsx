@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SideBar from '../../default/SideBar';
+import SideBar from '../../layout/SideBar'; 
 import SubNav from './components/SubNav';
 import SearchBar from './components/SearchBar';
 import StudyList from './components/StudyList';
@@ -10,9 +10,9 @@ const AllStudiesPage = () => {
   const [selectedTab, setSelectedTab] = useState('전체');
 
   return (
-    <div className="app-container">
+    <div className="allstudies-page">
       <div className="sidebar-container">
-        <SideBar />
+        <SideBar/>
       </div>
       <div className="main-container">
         <div className="left-box">
