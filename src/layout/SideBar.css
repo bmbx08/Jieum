@@ -46,6 +46,11 @@
   padding: 1rem;
 }
 
+.pre-login-text{
+  width:100%;
+  height: 100%;
+}
+
 .list-nav{
   font-family: "Pretendard-Bold";
   padding: 0.5em 1em;

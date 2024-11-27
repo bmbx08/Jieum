@@ -5,6 +5,12 @@
     padding: 1em 6em;
 }
 
+.upper-image-section{
+    margin-bottom: 3em;
+    display:flex;
+}
+
 .category-studies-section{
     display:flex;
+    margin: 3em 0;
 }
