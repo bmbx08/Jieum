@@ -15,9 +15,11 @@
 }
 
 .study-create-page{
+    font-family: "Pretendard-Regular";
     padding: 0 10em;
     padding-top: 3em;
     padding-bottom: 6em;
+    margin-top: 9vh;
     /* font-family: "둥글"; */
 }
 
@@ -36,6 +38,7 @@
 }
 
 .section-title{
+    font-family: "Pretendard-Bold";
     margin: 0.6em 0;
 }
 
@@ -116,7 +119,7 @@
 }
 
 .recruit-radio-section{
-    display:flex;
+    /* display:flex; */
     width:fit-content;
 }
 

@@ -9,7 +9,6 @@
     background-color: rgba(218,222,170,255);
     display: flex;
     align-items: center;
-    z-index: 1000;
 }
 
 .site-title-section{
@@ -30,4 +29,9 @@
     background-color: white;
     border-radius: 1.5em;
     margin-right: 0.5em;
+}
+
+.different-layout-title:hover{
+    transform: scale(1.05);
+    transition: ease-in-out 0.3s;
 }
