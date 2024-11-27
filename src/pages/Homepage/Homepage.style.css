@@ -1,0 +1,10 @@
+.study-homepage{
+    font-family:"Pretendard-Regular";
+    margin-left: 23%;
+    margin-top: 12vh;
+    padding: 1em 6em;
+}
+
+.category-studies-section{
+    display:flex;
+}
