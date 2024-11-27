@@ -17,8 +17,9 @@ const StudyAdminPage = () => {
 
   // 주차별 계획 수정 페이지로 이동
   const handleEditPlanClick = (week) => {
-    navigate(`/edit/${week}`);
+    navigate(`/studyAdmin/edit/${week}`);
   };
+  
 
   const members = [
     {

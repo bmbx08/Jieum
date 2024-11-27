@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./EditPlanPage.css";
+import "../EditPlanPage/EditPlanPage.css";
 
 const EditPlanPage = () => {
   const { week } = useParams(); // URL에서 주차 정보를 가져옴
@@ -10,7 +10,7 @@ const EditPlanPage = () => {
 
   const handleSubmit = () => {
     alert("등록되었습니다.");
-    navigate("/"); // 등록 후 메인 페이지로 이동
+    navigate("/studyAdmin"); // 등록 후 메인 페이지로 이동
   };
 
   return (
