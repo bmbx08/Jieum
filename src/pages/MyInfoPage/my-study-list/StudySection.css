@@ -1,0 +1,36 @@
+.study-section {
+  margin-top: 1.25rem;
+  border: 2px solid #e6e6e6;
+  border-radius: 0.7rem;
+  width: 80%;
+  padding: 0.7rem;
+}
+
+.MyStudy-list-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.study-status-filter {
+  display: flex;
+  margin-left: 1rem;
+  grid-area: 0.7rem;
+  margin-bottom: 0.8rem;
+}
+
+.status-btn {
+  padding: 0.4rem;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  height: 4rem;
+}
+
+.status-btn:hover {
+  border-bottom: 2px solid #8d9429;
+}
+.status-btn:active {
+  border-bottom: 2px solid #8d9429;
+}

@@ -1,0 +1,35 @@
+.study-item {
+  padding: 0.5rem;
+  border: 1.2px solid #e6e6e6;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  margin-bottom: 0.8rem;
+  margin: 1rem;
+  padding: 0.9rem;
+  color: #7a7a7a;
+
+  height: 5rem;
+}
+
+.study-header h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.study-header span,
+.study-item p {
+  font-size: 0.8rem;
+}
+
+.study-header span {
+  margin-top: 0.1rem;
+}
+
+.study-header {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.study-item:hover {
+  background-color: #e3e5c3;
+}

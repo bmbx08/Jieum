@@ -4,6 +4,8 @@ import UserInfoBox from '../userinfo-page/UserInfoBox';
 import UserInfoEdit from '../userinfo-page/UserInfoEdit';
 import MyPageProfile from './MyPageProfile';
 import UserTempBar from './UserTempBar';
+import { Category } from '@mui/icons-material';
+import StudySection from '../my-study-list/StudySection';
 
 const MyPage = () => {
   const [createdUserData, setCreatedUserData] = useState({
@@ -74,6 +76,8 @@ const MyPage = () => {
   return (
     <div className="myPage">
       <div className="user-info-box">
+        <h1 className="myPage-title">마이페이지</h1>
+
         {/* 내 정보 보기 버튼 클릭 >> UserInfo.js 렌더링 */}
         {!isViewing ? (
           <button onClick={() => setIsViewing(true)} className="view-info-btn">
@@ -96,8 +100,8 @@ const MyPage = () => {
           />
         )}
       </div>
-      <h1 className="myPage-title">마이페이지</h1>
       <MyPageProfile userInfo={createdUserData} />
+      <StudySection />
     </div>
   );
 };

@@ -9,19 +9,26 @@
 }
 
 .user-info-box {
-  align-self: self-end;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
 }
 
 .myPage-title {
   color: #191919;
   font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .view-info-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
   border: none;
   background: none;
+  margin-right: 19%;
 }
 
 .profile-section {

@@ -17,7 +17,7 @@ const MyPageProfile = ({ userInfo }) => {
       <p className="user-profile-item">
         <strong>{userInfo.userName}</strong>
         {userInfo.userDepartment} <br />
-        {userInfo.studentNum}
+        {userInfo.studentNum}학번
       </p>
       <div className="interest-keywords-Subtitle">
         <p>- 관심 키워드</p>
