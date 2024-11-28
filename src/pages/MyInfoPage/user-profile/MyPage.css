@@ -1,0 +1,29 @@
+.myPage {
+  background-color: #fafafa;
+  height: 100vh;
+  display: flex;
+  margin-left: 23%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.user-info-box {
+  align-self: self-end;
+}
+
+.myPage-title {
+  color: #191919;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.view-info-btn {
+  border: none;
+  background: none;
+}
+
+.profile-section {
+  display: flex;
+}

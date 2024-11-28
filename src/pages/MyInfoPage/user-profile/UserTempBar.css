@@ -1,0 +1,41 @@
+.user-temp-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 3rem;
+}
+
+.temp-title {
+  font-size: 0.9rem;
+  color: #7a7a7a;
+  text-decoration: underline;
+}
+
+.user-temp-bar-container {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.user-temp-bar {
+  width: 40rem;
+  height: 1.8rem;
+  background-color: #ffffff;
+  border-radius: 0.9rem;
+  border: 1px solid #d2d2d2;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.temp-fill {
+  height: 100%;
+  background-color: #6c9466;
+  transition: width 0.3s ease;
+}
+
+.temp-label {
+  font-size: 0.8rem;
+  color: #191919;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-top: 0.35rem;
+}

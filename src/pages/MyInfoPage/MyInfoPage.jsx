@@ -1,9 +1,9 @@
 import React from 'react';
-import MyPage from './components/MyPage';
+import MyPage from './user-profile/MyPage';
 
 const MyInfoPage = () => {
   return (
-    <div>
+    <div className="my-info-page">
       <MyPage />
     </div>
   );

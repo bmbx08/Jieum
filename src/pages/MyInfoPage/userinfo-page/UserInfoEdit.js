@@ -9,9 +9,13 @@ const UserInfoEdit = ({ userInfo, fields, onChange, onSave, onCancel }) => {
           <label>
             {field.label}:
             <input
-              type={field.name === 'password' ? 'password' : 'text'}
+              type={field.name === 'userPassword' ? 'password' : 'text'}
               name={field.name}
-              value={userInfo[field.name]}
+              value={
+                Array.isArray(userInfo[field.name])
+                  ? userInfo[field.name].join(',')
+                  : userInfo[field.name]
+              }
               onChange={onChange}
             />
           </label>
