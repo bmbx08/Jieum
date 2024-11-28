@@ -21,9 +21,9 @@ const CategoryRow = ({item}) => {
 
       <div className="study-item-button-section">
         <FavoriteBorderIcon className="study-item-icon" />
-        <div className="icon-number">{item&&item.blogPostContent.likes || 0}</div>
+        <div className="icon-number">{item&&item.blogPostContent.likes}</div>
         <ArchiveOutlinedIcon className="study-item-icon" />
-        <div className="icon-number">{item&&item.blogPostContent.submissions || 2}</div>
+        <div className="icon-number">{item&&item.blogPostContent.submissions}</div>
       </div>
     </div>
   );

@@ -171,3 +171,85 @@
   font-size: 0.7em;
   margin-right: 0.9em;
 }
+
+/*Study Carousel CSS*/
+.carousel-section-title{
+  font-size:1.8em;
+  color:#4C4E33;
+  font-family: "Pretendard-Bold";
+  margin-bottom: 0.6em;
+}
+
+.carousel-container{
+  padding: 0 3em;
+}
+
+.carousel-inner-container{
+  padding-bottom: 1.5em;
+  /* margin: 3em; */
+}
+
+
+/*Carousel Item CSS*/
+.carousel-item-box{
+  background-color: #DADEAA; 
+  width: 16em;
+  padding: 1em;
+  padding-bottom: 1.5em;
+  border-radius: 1em;
+  color: #7A7A7A;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+              -5px -5px 15px rgba(255, 255, 255, 0.3);
+  margin-bottom: 1em;
+}
+
+.carousel-item-box:hover{
+
+}
+
+.carousel-top-row{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.2em;
+}
+
+.carousel-sub-category{
+  all: unset;
+  /* font-size: 1em; */
+  font-family: "Pretendard-Bold";
+}
+
+.carousel-passion-temp{
+  all:unset;
+  font-size: 0.6em;
+}
+
+.carousel-title-row{
+  /* all:unset; */
+  font-size: 1.6em;
+  font-family: "Pretendard-Bold";
+  margin-bottom: 0.3em;
+  color:#616060;
+}
+
+.carousel-blog-title{
+  margin-bottom: 0.15em;
+  color: #4C4E33;
+  font-size: 0.95em;
+}
+
+.carousel-icon-row{
+  display:flex;
+  font-size:0.8em;
+  align-items: center;
+}
+
+.carousel-item-icon{
+  font-size: 1em !important;
+  margin-right: 0.2em;
+}
+
+.carousel-icon-number{
+  margin-right: 0.8em;
+}
