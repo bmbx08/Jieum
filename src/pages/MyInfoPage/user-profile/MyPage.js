@@ -3,8 +3,6 @@ import './MyPage.css';
 import UserInfoBox from '../userinfo-page/UserInfoBox';
 import UserInfoEdit from '../userinfo-page/UserInfoEdit';
 import MyPageProfile from './MyPageProfile';
-import UserTempBar from './UserTempBar';
-import { Category } from '@mui/icons-material';
 import StudySection from '../my-study-list/StudySection';
 
 const MyPage = () => {
