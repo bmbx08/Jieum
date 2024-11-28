@@ -15,8 +15,6 @@
 .study-status-filter {
   display: flex;
   margin-left: 1rem;
-  grid-area: 0.7rem;
-  margin-bottom: 0.8rem;
 }
 
 .status-btn {
@@ -25,12 +23,20 @@
   background: none;
   font-size: 1rem;
   cursor: pointer;
-  height: 4rem;
+  position: relative;
+  margin-right: 1rem;
 }
 
 .status-btn:hover {
-  border-bottom: 2px solid #8d9429;
+  border-bottom: 3px solid #8d9429;
+  color: #8d9429;
 }
 .status-btn:active {
-  border-bottom: 2px solid #8d9429;
+  border-bottom: 3px solid #8d9429;
+  color: #8d9429;
+}
+
+.status-btn.active {
+  border-bottom: 3px solid #8d9429;
+  color: #8d9429;
 }
