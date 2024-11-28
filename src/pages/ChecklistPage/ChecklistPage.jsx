@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./ChecklistPage.css";
 
 // WeekChecklist Component (빨간색 - 체크리스트 항목)
-const WeekChecklist = ({ week, description, link }) => {
+const WeekChecklist = ({ week, description, link, checked, onCheck }) => {
   return (
     <div className="week-checklist">
-      <input type="checkbox" className="check-box" />
+      <input
+        type="checkbox"
+        className="check-box"
+        checked={checked}
+        onChange={onCheck}
+      />
       <Link to={link} className="week-todo">
         {`${week}주차: ${description}`}
       </Link>
@@ -41,11 +46,12 @@ const ProgressSection = ({ week, title, progress }) => {
           </div>
           <div className="weekly-progressbar">
             <h9>개인 진행 상황</h9>
-            <ProgressBar
-              now={progress}
-              className="custom-progress-bar"
-              label={`${progress}%`}
-            />
+            <div className="progress-wrapper">
+              <ProgressBar now={progress} className="custom-progress-bar" />
+              <span className="progress-percent">{`${progress.toFixed(
+                0
+              )}%`}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -66,7 +72,7 @@ const MembersContent = ({ members }) => {
 };
 
 // ChecklistContent Component (파란색 - 체크리스트 섹션)
-const ChecklistContent = ({ weeks }) => {
+const ChecklistContent = ({ weeks, completed, onCheck }) => {
   return (
     <div className="checklist-content">
       <div className="checklist-header">
@@ -78,6 +84,8 @@ const ChecklistContent = ({ weeks }) => {
           week={week.week}
           description={week.description}
           link={week.link}
+          checked={completed[index]}
+          onCheck={() => onCheck(index)}
         />
       ))}
     </div>
@@ -86,8 +94,6 @@ const ChecklistContent = ({ weeks }) => {
 
 // Main ChecklistPage Component
 const ChecklistPage = () => {
-  const now = 25; // 개인 진행 상황
-  const members = ["김주은", "고하늘", "표선영", "박정효"];
   const weeks = [
     { week: 1, description: "HTML & CSS 기초 학습", link: "/checklist/week1" },
     {
@@ -99,17 +105,33 @@ const ChecklistPage = () => {
     { week: 4, description: "최종 프로젝트 진행", link: "/checklist/week4" },
   ];
 
+  // 체크리스트 상태 관리
+  const [completed, setCompleted] = useState(Array(weeks.length).fill(false));
+  const progress = (completed.filter(Boolean).length / weeks.length) * 100; // 진행 상태
+
+  const handleCheck = (index) => {
+    const updated = [...completed];
+    updated[index] = !updated[index];
+    setCompleted(updated);
+  };
+
+  const members = ["김주은", "고하늘", "표선영", "박정효"];
+
   return (
     <div className="display-center">
       <div className="main-content">
         <ProgressSection
           week={2}
           title="React 기초 및 컴포넌트 구조 이해"
-          progress={now}
+          progress={progress}
         />
         <MembersContent members={members} />
       </div>
-      <ChecklistContent weeks={weeks} />
+      <ChecklistContent
+        weeks={weeks}
+        completed={completed}
+        onCheck={handleCheck}
+      />
     </div>
   );
 };

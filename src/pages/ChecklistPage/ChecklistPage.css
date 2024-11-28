@@ -47,7 +47,7 @@
 }
 
 .progress-container {
-    background-image: url('../ChecklistPage/background-img.png');
+    background-image: url('../ChecklistPage/background.png');
     border: 1px solid lightgray;
     width: 100%;
     /* 부모 요소 너비에 맞춤 */
@@ -118,7 +118,7 @@
 }
 
 .custom-progress-bar .progress-bar {
-    background-color: #8D9429;
+    background-color: rgb(66, 163, 201);
     height: 100%; /* 부모의 높이와 맞춤 */
     display: flex;
     align-items: center; /* 텍스트 수직 정렬 */
