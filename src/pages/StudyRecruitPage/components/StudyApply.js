@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import './StudyApply.css';
 
-const StudyApply = ({ onApplicantAdd, userName, studyInfo }) => {
+const StudyApply = ({ onApplicantAdd, userName, createdStudyData }) => {
+  const { authorName, studyInfo, blogPostContent } = createdStudyData;
   const handleApply = () => {
     Swal.fire({
       title: '신청 완료 하시겠습니까?',
@@ -25,12 +26,13 @@ const StudyApply = ({ onApplicantAdd, userName, studyInfo }) => {
     const newApplicant = {
       name: userName,
       category: studyInfo.category,
-      blogTitle: studyInfo.blogTitle,
-      authorName: studyInfo.authorName, //스터디 글 작성자 이름
+      blogTitle: blogPostContent.blogTitle,
+      authorName: authorName, //스터디 글 작성자 이름
       timestamp: new Date().toLocaleString(),
     };
 
     onApplicantAdd(newApplicant);
+    console.log('new applicant: ', newApplicant);
   };
 
   return (

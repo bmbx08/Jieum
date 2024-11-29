@@ -1,6 +1,5 @@
 import React from 'react';
 import './StudyForm.css';
-import { Description } from '@mui/icons-material';
 
 const StudyForm = ({ studyInfo, weeklySchedule }) => {
   return (

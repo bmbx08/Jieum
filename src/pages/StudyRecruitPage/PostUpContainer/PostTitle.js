@@ -1,9 +1,15 @@
 import './PostTitle.css';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import PostProfile from './PostProfile';
 
-const PostTitle = ({ blogPostContent, authorName }) => {
+const PostTitle = ({
+  blogPostContent,
+  authorName,
+  currentTime,
+  authorID,
+  setAuthorID,
+}) => {
   //모집 중 버튼 상태
   const [isRecruiting, setIsRecruiting] = useState(true);
 
@@ -16,7 +22,12 @@ const PostTitle = ({ blogPostContent, authorName }) => {
           {isRecruiting ? '모집 중' : '모집 완료'}
         </Button>
       </div>
-      <PostProfile authorName={authorName} />
+      <PostProfile
+        authorName={authorName}
+        authorID={authorID}
+        currentTime={currentTime}
+        setAuthorID={setAuthorID}
+      />
     </div>
   );
 };
