@@ -1,6 +1,6 @@
 import React from "react";
 import CarouselItem from "./CarouselItem";
-import categoryArray from "../categoryArray";
+import categoryArray from "../../../../common/studyExampleArray";
 import Carousel from "react-multi-carousel";
 import responsive from "./responsive/responsive";
 import "react-multi-carousel/lib/styles.css";

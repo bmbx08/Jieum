@@ -2,7 +2,7 @@ import React from "react";
 import "./Homepage.style.css";
 import TopImage from "./components/TopImage";
 import StudyColumn from "./components/StudyColumn";
-import CharacterSection from "./components/CharacterSection";
+import CharacterSection from "./components/CharacterSection/CharacterSection";
 import StudyNote from "./components/StudyNote/StudyNote";
 import StudyCarousel from "./components/Carousel/StudyCarousel";
 

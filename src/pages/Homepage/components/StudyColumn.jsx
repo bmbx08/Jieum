@@ -1,8 +1,9 @@
 import React from "react";
 import CategoryRow from "./CategoryRow";
 import { useNavigate } from "react-router-dom";
+import categoryArray from "../../../common/studyExampleArray"
 import "./HomepageComponent.style.css";
-import categoryArray from "./categoryArray"
+
 
 const StudyColumn = ({title}) => {
   const navigate=useNavigate();
