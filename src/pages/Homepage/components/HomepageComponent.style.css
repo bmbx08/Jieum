@@ -30,8 +30,6 @@
   background-color:rgb(150,150,150);
 }
 
-/*rgb(112,112,112) */
-/*rgb(252,252,252) */
 
 /*CharacterSection CSS*/
 .top-left-box {
@@ -46,7 +44,6 @@
   width: 100%;
   height: 20em;
   border-radius: 1em;
-  /* aspect-ratio: attr(data-aspect-ratio); */
 }
 
 /*CharInfoBox CSS*/
@@ -93,6 +90,33 @@
   left: 16em;
   top: 7.2em;
 }
+
+.egg-rotate {
+  animation: rotateSequence 1.5s ease-in-out; 
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotateSequence {
+  0% {
+    transform: rotate(0deg);
+  }
+  6.25%{
+    transform: rotate(-15deg);
+  }
+  12.5%{
+    transform: rotate(0deg);
+  }
+  18.75%{
+    transform: rotate(-15deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 
 .char2{
   left: 14.5em;
