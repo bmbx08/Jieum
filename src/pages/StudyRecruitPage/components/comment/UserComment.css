@@ -25,6 +25,7 @@
   flex-direction: column;
 }
 
+/* 답글 등록 버튼 */
 .reply-submit-btn {
   align-items: flex-start;
   background: none;
@@ -34,9 +35,11 @@
   color: #7a7a7a;
 }
 
+/* 답글 달기 버튼 */
 .reply-toggle-btn {
   display: flex;
   flex-direction: row;
+  margin-left: -0.45rem;
   font-size: 0.85rem;
   border: none;
   background: none;
@@ -101,18 +104,19 @@
   width: 90%;
 }
 
+/* 답글 목록 */
 .reply-box ul li {
   margin-top: 0.5rem;
   padding-left: 0.5rem;
   margin-left: 2rem;
   font-size: 0.9rem;
-  border-top: 2px solid #b1b1b1;
   border-width: 20%;
   padding: 0.6rem;
+  border-bottom: 1px solid #b1b1b1;
 }
 
 .timestamp {
-  color: #7a7a7a;
+  color: #b8b8b8;
   font-size: 0.75rem;
   margin-top: -0.3rem;
 }
