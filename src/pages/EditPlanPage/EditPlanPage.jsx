@@ -9,6 +9,20 @@ const EditPlanPage = () => {
   const [task, setTask] = useState("");
 
   const handleSubmit = () => {
+    // 줄 단위로 계획을 배열 형태로 변환
+    const plansArray = plan
+      .split("\n") // 줄바꿈 기준으로 나누기
+      .map((line) => line.trim()) // 각 줄의 공백 제거
+      .filter((line) => line !== ""); // 빈 줄 제거
+
+    if (plansArray.length === 0) {
+      alert("계획을 작성해주세요.");
+      return;
+    }
+
+    console.log("등록된 계획:", plansArray);
+    console.log("등록된 과제:", task);
+
     alert("등록되었습니다.");
     navigate("/studyAdmin"); // 등록 후 메인 페이지로 이동
   };
@@ -18,9 +32,10 @@ const EditPlanPage = () => {
       <h2>웹프로그래밍</h2>
       <h3>{`${week}주차`}</h3>
       <textarea
-        placeholder="구체적인 계획을 작성해주세요."
+        placeholder="계획을 줄 단위로 작성해주세요. (Enter로 구분)"
         value={plan}
         onChange={(e) => setPlan(e.target.value)}
+        rows={10}
       />
       <div className="task-section">
         <label htmlFor="task">과제:</label>
