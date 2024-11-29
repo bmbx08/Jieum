@@ -12,16 +12,15 @@ import StudyRecruitPage from "./pages/StudyRecruitPage/StudyRecruitPage";
 import MyInfoPage from "./pages/MyInfoPage/MyInfoPage";
 import AllStudiesPage from "./pages/AllStudiesPage/AllStudiesPage";
 import DifferentLayout from "./layout/DifferentLayout";
-
-
-
+import { useState } from "react";
 
 function App() {
+  const [authentication,setAuthentication]=useState(false);
   return (
     <div>
       <Routes>
-        <Route path="/" element={<AppLayout />}> {/*네브바*/}
-          <Route index element={<Homepage />} />
+        <Route path="/" element={<AppLayout authentication={authentication}/>}> {/*네브바*/}
+          <Route index element={<Homepage authentication={authentication}/>} />
           <Route path="studies">
             <Route index element={<AllStudiesPage/>}/>
             <Route path=":id" element={<StudyRecruitPage/>}/> {/*스터디 모집 페이지(글쓰기)*/}
@@ -31,7 +30,7 @@ function App() {
             <Route path=":id" element={<StudyInfoPage/>}/> {/*스터디 상세 페이지*/}
           </Route>
           
-          <Route path="login" element={<LoginPage/>}/>
+          <Route path="login" element={<LoginPage authentication={authentication} setAuthentication={setAuthentication}/>}/>
           <Route path="signup" element={<SignupPage/>}/>
           <Route path="myinfo" element={<MyInfoPage/>}/>
         </Route>

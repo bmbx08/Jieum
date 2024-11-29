@@ -9,14 +9,24 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import User from "../default/User";
 import { useNavigate } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({authentication}) => {
   const navigate = useNavigate();
   return (
     <div className="sidebar">
       <ul className="sidebarList">
-        <li className="sidebarListItem top-nav-underline top-nav">
-          <User className="sidebarIcon" />
-        </li>
+        
+          {authentication?(
+            <li className="sidebarListItem top-nav-underline top-nav">
+              <User/>
+            </li>
+          ):(
+            <li onClick={()=>navigate("/login")} className="sidebarListItem top-nav-underline top-nav sub-text">
+              로그인 후 이용해주세요.
+            </li>
+            
+          )}
+          
+        
         <div className="sidebar-top-box">
           <li onClick={()=>navigate("/")} className="sidebarListItem list-nav">
             <HomeOutlinedIcon className="sidebarIcon home-icon " />홈

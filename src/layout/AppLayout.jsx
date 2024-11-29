@@ -4,12 +4,12 @@ import profileImg from "./images/male-profile.png";
 import "./AppLayout.style.css";
 import SideBar from "./SideBar";
 
-const AppLayout = () => {
+const AppLayout = ({authentication}) => {
   const [userName, setUserName] = useState("정기찬");
   return (
     <div>
       <div className="sidebar-container">
-        <SideBar/>
+        <SideBar authentication={authentication}/>
       </div>
       <div className="top-navbar">
         <div className="site-title-section">백석 지음(知音)</div>
