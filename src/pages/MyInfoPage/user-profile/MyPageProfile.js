@@ -25,7 +25,7 @@ const MyPageProfile = ({ userInfo }) => {
       <div className="interest-keywords">
         {userInfo.interestBadgeArray.map((keyword, index) => (
           <span key={index} className="keyword-item">
-            {keyword}
+            #{keyword}
           </span>
         ))}
       </div>

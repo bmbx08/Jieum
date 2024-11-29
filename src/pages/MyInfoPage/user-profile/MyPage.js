@@ -98,8 +98,10 @@ const MyPage = () => {
           />
         )}
       </div>
-      <MyPageProfile userInfo={createdUserData} />
-      <StudySection />
+      <div className="mypage-section">
+        <MyPageProfile userInfo={createdUserData} />
+        <StudySection />
+      </div>
     </div>
   );
 };
