@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import "../HomepageComponent.style.css";
 import BeauryGrow from './BeauryGrow';
 import CharInfoBox from './CharInfoBox';
 import CharProgressBar from './CharProgressBar';
+import "../HomepageComponent.style.css";
 
 const CharacterSection = () => {
   const [charLevel,setCharLevel]=useState(1);

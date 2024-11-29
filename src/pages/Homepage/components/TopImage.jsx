@@ -1,10 +1,13 @@
 import React from "react";
-import topImage from "../../../common/images/background3.png";
 import "./HomepageComponent.style.css";
+import { useNavigate } from "react-router-dom";
 
 const TopImage = () => {
+  const navigate=useNavigate();
   return(
-    <img src={topImage} className="top-background-image" />
+    <div className="top-background-image">
+      <button onClick={()=>navigate("/login")} className="top-image-button">스터디 시작</button>
+    </div>
   ) 
   
 };

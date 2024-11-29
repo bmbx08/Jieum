@@ -1,12 +1,37 @@
 /*TopImage CSS*/
 .top-background-image {
-  background-image: url("../../../common/images/background3.png");
+  position:relative;
+  background-image: url("../../../common/images/backgrounds/background3.png");
   background-repeat: no-repeat;
+  background-size:contain;
   width: 100%;
-
-  border-radius: 17px;
-  /* height: 20em; */
+  height: 20.73em;
+  border-radius: 1em;
 }
+
+.top-image-button{
+  position:absolute;
+  left: 2em;
+  top:9.8em;
+  font-family: "Pretendard-Bold";
+  color:#4C4E33;
+  border: none;
+  border-radius: 0.3em;
+  padding: 0.3em 3em;
+  font-size: 1.5em;
+}
+
+.top-image-button:hover{
+  background-color:rgb(210,210,210);
+  /* color:#faffba; */
+}
+
+.top-image-button:active{
+  background-color:rgb(150,150,150);
+}
+
+/*rgb(112,112,112) */
+/*rgb(252,252,252) */
 
 /*CharacterSection CSS*/
 .top-left-box {
@@ -15,11 +40,12 @@
 
 .character-image-box{
   position:relative;
-  background-image: url("../../../common/images/loginbackground1.png");
+  background-image: url("../../../common/images/backgrounds/loginbackground1.png");
   background-repeat: no-repeat;
   background-size:contain;
   width: 100%;
   height: 20em;
+  border-radius: 1em;
   /* aspect-ratio: attr(data-aspect-ratio); */
 }
 

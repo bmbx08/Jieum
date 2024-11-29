@@ -19,7 +19,7 @@ const StudyCarousel = () => {
         responsive={responsive}
         infinite={false}
         autoPlay={true}
-        autoPlaySpeed={5000}
+        autoPlaySpeed={2000}
         transitionDuration={200}
         // keyBoardControl={true}
         // sliderClass="carousel-inner-container"
