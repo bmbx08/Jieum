@@ -1,16 +1,22 @@
 let initialState={
-    // count:0,
+    userData:{},
+    createdStudyList: [],
 }
 
-
-
 function reducer(state=initialState,action){
-    // console.log("action",action)
-    // if(action.type === "INCREMENT") {
-    //     return {...state,count:state.count+1}
-    // }
+    const {type,payload}=action;
+    switch(type){
+        case "CREATE_USERDATA":
+            console.log("store is accessed!!")
+            return{...state,userData:payload.userData}
 
-    return{...state};
+        case "CREATE_STUDYGROUP":
+            return {...state,createdStudyList:[...state.createdStudyList,payload.createdStudyData]}
+
+        default:
+            return{...state}
+            
+    }
 }
 
 export default reducer;
