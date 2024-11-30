@@ -61,6 +61,20 @@ const MyPage = () => {
       createdAt: '2024.11.30',
       status: '모집 중', //모집 상태
     },
+    {
+      id: 4,
+      studyInfo: {
+        category: '자기개발',
+        subCategory: '독해 및 리스닝',
+        subject: '토익',
+        recruitSize: 8,
+        limitlessRecruit: false,
+        createdBy: 'kohaneul1219',
+        currentRecruit: 7,
+      },
+      createdAt: '2024.12.01',
+      status: '모집 중',
+    },
   ]);
 
   console.log('userData', createdUserData);

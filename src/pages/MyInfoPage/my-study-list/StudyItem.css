@@ -10,6 +10,11 @@
   height: 5rem;
 }
 
+.study-item-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 .study-header strong {
   font-size: 1.06rem;
   font-weight: bold;

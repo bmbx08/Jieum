@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './StudySection.css';
 import './StudyList';
 import StudyList from './StudyList';
-import RecruitState from './RecruitState';
 
 const StudySection = ({ studies, handleCompleteRecruit }) => {
   //내 스터디 내역 카테고리 진행 중/ 진행 완료/ 전체
@@ -33,19 +32,10 @@ const StudySection = ({ studies, handleCompleteRecruit }) => {
 
         <div className="study-list">
           {filteredData.length > 0 ? (
-            filteredData.map((study) => (
-              <div key={study.id}>
-                <StudyList
-                  studies={filteredData}
-                  handleCompleteRecruit={handleCompleteRecruit}
-                />
-
-                <RecruitState
-                  study={study}
-                  handleCompleteRecruit={handleCompleteRecruit}
-                />
-              </div>
-            ))
+            <StudyList
+              studies={filteredData}
+              handleCompleteRecruit={handleCompleteRecruit}
+            />
           ) : (
             <p>해당하는 스터디가 없습니다</p>
           )}
