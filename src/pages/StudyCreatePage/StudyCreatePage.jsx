@@ -115,6 +115,7 @@ const StudyCreatePage = () => {
     console.log("submit data!!");
     const createdStudyData={
       studyInfo:{
+        studyID:Math.random().toString(36).substr(2, 9),
         category: selectedCategory, //카테고리(string)
         subCategory: selectedDropdownOne, //부카테고리(string)
         subject: subjectInputContent, //과목(string)
@@ -142,6 +143,7 @@ const StudyCreatePage = () => {
     if (selectedDropdownOne) {
       setInterestBadgeArray([...interestBadgeArray, selectedDropdownOne]);
     }
+    // console.log(Math.random().toString(36).substr(2, 9))
     // if(selectedDropdownTwo){
     //   setInterestBadgeArray([...interestBadgeArray,selectedDropdownTwo])
     // }
