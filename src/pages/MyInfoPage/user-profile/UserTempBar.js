@@ -4,6 +4,7 @@ const UserTempBar = ({ userTemp }) => {
   return (
     <div className="user-temp-container">
       <div className="temp-title">열정온도 *</div>
+
       <div className="user-temp-bar-container">
         <div className="user-temp-bar">
           <div className="temp-fill" style={{ width: `${userTemp}%` }} />

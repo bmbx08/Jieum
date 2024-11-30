@@ -3,16 +3,15 @@
   border: 1.2px solid #e6e6e6;
   border-radius: 0.5rem;
   background-color: #ffffff;
-  margin-bottom: 0.8rem;
   margin: 1rem;
   padding: 0.9rem;
   color: #7a7a7a;
-
+  width: 70%;
   height: 5rem;
 }
 
-.study-header h3 {
-  font-size: 1.1rem;
+.study-header strong {
+  font-size: 1.06rem;
   font-weight: bold;
 }
 
@@ -22,7 +21,7 @@
 }
 
 .study-header span {
-  margin-top: 0.1rem;
+  margin-top: 0.25rem;
 }
 
 .study-header {

@@ -1,5 +1,5 @@
 import React from 'react';
-import MyPage from './user-profile/MyPage';
+import MyPage from './MyPage';
 
 const MyInfoPage = () => {
   return (

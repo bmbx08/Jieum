@@ -1,49 +1,24 @@
 import React, { useState } from 'react';
-import StudyList from './StudyList';
 import './StudySection.css';
+import './StudyList';
+import StudyList from './StudyList';
+import RecruitState from './RecruitState';
 
-const StudySection = () => {
-  const [statusFilter, setStatusFilter] = useState('전체');
-
-  //우선 초기값 설정
-  const studyData = [
-    {
-      id: 1,
-      studyInfo: {
-        category: '전공',
-        subCategory: 'React 심화',
-        subject: '리액트 프로젝트',
-        recruitSize: 5,
-        limitlessRecruit: false,
-      },
-      createdAt: '2024-11-01',
-      status: '진행 중',
-    },
-    {
-      id: 2,
-      studyInfo: {
-        category: '교양',
-        subCategory: '알고리즘',
-        subject: '자료구조 및 알고리즘',
-        recruitSize: 10,
-        limitlessRecruit: true,
-      },
-      createdAt: '2024-09-15',
-      status: '진행 완료',
-    },
-  ];
+const StudySection = ({ studies, handleCompleteRecruit }) => {
+  //내 스터디 내역 카테고리 진행 중/ 진행 완료/ 전체
+  const [statusFilter, setStatusFilter] = useState('진행 중');
 
   const filteredData =
     statusFilter === '전체'
-      ? studyData
-      : studyData.filter((study) => study.status === statusFilter);
+      ? studies
+      : studies.filter((study) => study.status === statusFilter);
 
   return (
     <div>
-      <h2 className="MyStudy-list-title">- 내 스터디</h2>
+      <h3 className="myStudy-list-title">- 내 스터디</h3>
       <div className="study-section">
         <div className="study-status-filter">
-          {['전체', '진행 중', '진행 완료'].map((status) => (
+          {['진행 중', '진행 완료', '전체'].map((status) => (
             <button
               key={status}
               className={`status-btn ${
@@ -57,7 +32,23 @@ const StudySection = () => {
         </div>
 
         <div className="study-list">
-          <StudyList studies={filteredData} />
+          {filteredData.length > 0 ? (
+            filteredData.map((study) => (
+              <div key={study.id}>
+                <StudyList
+                  studies={filteredData}
+                  handleCompleteRecruit={handleCompleteRecruit}
+                />
+
+                <RecruitState
+                  study={study}
+                  handleCompleteRecruit={handleCompleteRecruit}
+                />
+              </div>
+            ))
+          ) : (
+            <p>해당하는 스터디가 없습니다</p>
+          )}
         </div>
       </div>
     </div>

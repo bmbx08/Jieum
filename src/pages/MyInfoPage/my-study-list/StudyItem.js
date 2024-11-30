@@ -7,10 +7,11 @@ const StudyItem = ({ study }) => {
   return (
     <div className="study-item">
       <div className="study-header">
-        <h3>{subject}</h3>
-        <span>참여 인원: {limitlessRecruit ? '없음' : `${recruitSize}명`}</span>
+        <strong>{subject}</strong>
+        <span>
+          참여 인원: {limitlessRecruit ? '제한 없음' : `${recruitSize}명`}
+        </span>
       </div>
-
       <p className="study-data">생성 날짜: {createdAt}</p>
     </div>
   );

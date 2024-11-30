@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import './MyPageProfile.css';
 import UserTempBar from './UserTempBar';
+import './MyPageProfile.css';
 
 const MyPageProfile = ({ userInfo }) => {
-  //userTempBar
-  const [userTemp, setUserTemp] = useState(80); //우선 초기값으로 80 해 두겠습니다!!!
+  //사용자 온도바
+  const [userTemp, setUserTemp] = useState(80); //초기값 80으로 설정
+
   return (
     <div className="myPage-profile-box">
-      {/* <img src={bg} className="profile-box-bg" alt="background" /> */}
       <div className="profile-section">
         <AccountCircleIcon className="user-profile-icon" />
         <UserTempBar userTemp={userTemp} />
@@ -19,8 +19,9 @@ const MyPageProfile = ({ userInfo }) => {
         {userInfo.userDepartment} <br />
         {userInfo.studentNum}학번
       </p>
+
       <div className="interest-keywords-Subtitle">
-        <p>- 관심 키워드</p>
+        <p>-관심 키워드</p>
       </div>
       <div className="interest-keywords">
         {userInfo.interestBadgeArray.map((keyword, index) => (
