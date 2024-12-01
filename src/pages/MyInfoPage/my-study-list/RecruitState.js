@@ -5,7 +5,10 @@ const RecruitState = ({ study, handleCompleteRecruit }) => {
   return (
     <div>
       {study.status === '모집 중' && (
-        <button onClick={() => handleCompleteRecruit(study.id)}>
+        <button
+          className="complete-recruit-btn"
+          onClick={() => handleCompleteRecruit(study.id)}
+        >
           모집 완료
         </button>
       )}

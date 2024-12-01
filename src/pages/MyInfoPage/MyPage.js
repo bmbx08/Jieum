@@ -3,10 +3,13 @@ import MyPageProfile from './user-profile/MyPageProfile';
 import './MyPage.css';
 import StudySection from './my-study-list/StudySection';
 import MyStudyRecruitSection from './my-study-list/MyStudyRecruitSection';
-import UserInfoBox from './userinfo-page/UserInfoBox';
+import UserInfoBox from './MyDetailPage/userinfo-page/UserInfoBox';
+import { useNavigate } from 'react-router-dom';
 
 const MyPage = () => {
   const [viewMode, setViewMode] = useState(null); //정보 확인 또는 수정
+  const navigate = useNavigate();
+
   //사용자 정보 수정 위함 (초기값 별도 저장)
   // const [originalUserInfo, setOriginalUserInfo] = useState(createdUserData);
   //사용자 정보 저장 (로그인한 사용자)
@@ -126,33 +129,34 @@ const MyPage = () => {
 
   //내 정보 보기
   const handleViewInfoClick = () => {
-    setViewMode('info');
+    console.log('navigation to details page');
+    navigate('/myinfo/details');
   };
 
   //내 정보 수정하기
-  const handleEditClick = () => {
-    setEditedUserInfo(createdUserData);
-    setViewMode('edit');
-  };
+  // const handleEditClick = () => {
+  //   setEditedUserInfo(createdUserData);
+  //   setViewMode('edit');
+  // };
 
-  //취소 버튼
-  const handleCancelClick = () => {
-    setViewMode('info');
-  };
+  // //취소 버튼
+  // const handleCancelClick = () => {
+  //   setViewMode('info');
+  // };
 
-  //저장 버튼
-  const handleSaveClick = () => {
-    setCreatedUserData(editedUserInfo);
-    setViewMode('info');
-  };
+  // //저장 버튼
+  // const handleSaveClick = () => {
+  //   setCreatedUserData(editedUserInfo);
+  //   setViewMode('info');
+  // };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEditedUserInfo((prev) => ({
-      ...prev,
-      [name]: name === 'interestBadgeArray' ? value.split(',') : value,
-    }));
-  };
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setEditedUserInfo((prev) => ({
+  //     ...prev,
+  //     [name]: name === 'interestBadgeArray' ? value.split(',') : value,
+  //   }));
+  // };
 
   return (
     <div className="my-page">
@@ -162,14 +166,14 @@ const MyPage = () => {
           내 정보 보기
         </button>
       </div>
-      {viewMode === 'info' && (
+      {/* {viewMode === 'info' && (
         <UserInfoBox
           userInfo={createdUserData}
           fields={userInfoFields}
           onEdit={handleEditClick}
         />
-      )}
-      {viewMode === 'edit' && (
+      )} */}
+      {/* {viewMode === 'edit' && (
         <UserInfoBox
           userInfo={editedUserInfo}
           fields={userInfoFields}
@@ -177,7 +181,7 @@ const MyPage = () => {
           onSave={handleSaveClick}
           onCancel={handleCancelClick}
         />
-      )}
+      )} */}
       <div className="my-page-sectionBox">
         <MyPageProfile userInfo={createdUserData} />
         <StudySection

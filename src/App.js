@@ -10,6 +10,7 @@ import MyStudyPage from './pages/MyStudyPage/MyStudyPage';
 import StudyInfoPage from './pages/StudyInfoPage/StudyInfoPage';
 import StudyRecruitPage from './pages/StudyRecruitPage/StudyRecruitPage';
 import MyInfoPage from './pages/MyInfoPage/MyInfoPage';
+import MyDetailPage from './pages/MyInfoPage/MyDetailPage/MyDetailPage';
 
 function App() {
   return (
@@ -30,7 +31,10 @@ function App() {
             <Route path=":id" element={<StudyInfoPage />} />{' '}
             {/*스터디 상세 페이지*/}
           </Route>
-          {/* <Route path="myinfo" element={<MyInfoPage/>}/> */}
+          <Route path="myinfo">
+            <Route index element={<MyInfoPage />} />
+            <Route path="details" element={<MyDetailPage />} />
+          </Route>
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />

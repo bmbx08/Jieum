@@ -21,13 +21,19 @@
 }
 
 .study-header span {
-  margin-top: 0.25rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .study-header {
   display: flex;
-  /* align-items: center; */
-  gap: 0.8rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.current-recruit-text {
+  margin-top: -0.6rem;
+  align-items: flex-start;
 }
 
 .study-item:hover {

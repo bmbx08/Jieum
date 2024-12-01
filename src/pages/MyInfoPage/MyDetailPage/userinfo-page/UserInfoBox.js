@@ -1,7 +1,7 @@
 import React from 'react';
 import './UserInfoBox.css';
 
-const UserInfoBox = ({ userInfo, fields, onEdit }) => {
+const UserInfoBox = ({ userInfo, fields, onEdit, onPasswordChange }) => {
   //피그마에 나온 대로, 이름/학과/학번/연락처, 아이디/비밀번호, 각오의 한 마디
   //총 3가지로 정보 그룹화 시키기
   const basicInfoFields = fields.filter(
