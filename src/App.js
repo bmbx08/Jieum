@@ -13,13 +13,14 @@ import MyInfoPage from "./pages/MyInfoPage/MyInfoPage";
 import AllStudiesPage from "./pages/AllStudiesPage/AllStudiesPage";
 import DifferentLayout from "./layout/DifferentLayout";
 import { useState } from "react";
+import MyDetailPage from "./pages/MyInfoPage/MyDetailPage.jsx/MyDetailPage";
 
 function App() {
   const [authentication,setAuthentication]=useState(false);
   return (
     <div>
       <Routes>
-        <Route path="/" element={<AppLayout authentication={authentication}/>}> {/*네브바*/}
+        <Route path="/" element={<AppLayout authentication={authentication} setAuthentication={setAuthentication}/>}> {/*네브바*/}
           <Route index element={<Homepage authentication={authentication}/>} />
           <Route path="studies">
             <Route index element={<AllStudiesPage/>}/>
@@ -32,7 +33,10 @@ function App() {
           
           <Route path="login" element={<LoginPage authentication={authentication} setAuthentication={setAuthentication}/>}/>
           <Route path="signup" element={<SignupPage/>}/>
-          <Route path="myinfo" element={<MyInfoPage/>}/>
+          <Route path="myinfo">
+            <Route index element={<MyInfoPage/>}/>
+            <Route path="details" element={<MyDetailPage/>}/>
+          </Route>
         </Route>
         
         <Route path ="/newstudy" element={<><DifferentLayout/><StudyCreatePage/></>}/> {/*스터디 생성 페이지*/}

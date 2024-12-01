@@ -7,11 +7,17 @@ import './User.css';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import { KeyboardArrowDown } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const User = () => {
-  const [userName, setUserName] = useState('정기찬'); // 렌더링 위해 초기값 설정 (사용자 이름)
+const User = ({setAuthentication}) => {
+  const navigate = useNavigate();
+  const currentUserData = useSelector((state)=>state.currentUserData);
+
+  // const [userName, setUserName] = useState('정기찬'); // 렌더링 위해 초기값 설정 (사용자 이름)
   const [notificationCount, setNotificationCount] = useState(2); // 렌더링 위해 초기값 설정 (알림 개수)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
 
   const toggleDropdown = () => {
     //prev == 함수에 전달된 현재 상태 값!!
@@ -19,11 +25,16 @@ const User = () => {
     setIsDropdownOpen((prev) => !prev);
   };
 
+  const handleLogout = ()=>{
+    setAuthentication(false);
+    navigate("/");
+  }
+
   return (
     <div className="user-tab">
       <div className="userprofile">
         <AccountCircleIcon className="user-profile-icon" />
-        <span className="user-profile-name">{userName}</span>
+        <span className="user-profile-name">{currentUserData.userInfo.userName||"없음"}</span>
 
         {/* 드롭다운 상태 변경 */}
         <div onClick={toggleDropdown} className="dropdown-icon-style">
@@ -41,8 +52,8 @@ const User = () => {
             show={isDropdownOpen}
             style={{ position: 'absolute', top: '30px' }}
           >
-            <Dropdown.Item href="#/MyPage">마이페이지</Dropdown.Item>
-            <Dropdown.Item href="#/Logout">로그아웃</Dropdown.Item>
+            <Dropdown.Item onClick={()=>navigate("/myinfo")}>마이페이지</Dropdown.Item>
+            <Dropdown.Item onClick={handleLogout}>로그아웃</Dropdown.Item>
           </Dropdown.Menu>
         )}
 

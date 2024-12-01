@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import './SignupPage.css';
-import FirstPage from "./FirstPage/FirstPage";
+import FirstPage from "./OldPage/FirstPage";
 import SignupInput from "./components/SignupInput";
 import MajorDropdown from "./components/MajorDropdown";
 import BadgeOverlay from "./Overlay/BadgeOverlay";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import './SignupPage.style.css';
+
 
 const SignupPage = () => {
   const dispatch = useDispatch();
@@ -29,12 +30,28 @@ const SignupPage = () => {
     event.preventDefault();
     console.log("submit data!!");
     const createdUserData={
-      userName,userPhoneNum,userID,userPassword,studentNum,userAppealPhrase,interestBadgeArray
+      UniqueID: (Math.floor(Date.now()/1000).toString()),
+      userInfo:{
+        userName,
+        userPhoneNum,
+        userID,
+        userPassword,
+        studentNum,
+        userAppealPhrase,
+        passionTemp:35,
+      },
+      recommendInfo:{
+        interestBadgeArray,
+      },
+      characterInfo:{
+        level: 1,
+        barPercent: 0,
+      },
     }
     console.log("유저 정보!",createdUserData);
     dispatch({type:"CREATE_USERDATA",payload: {userData:createdUserData}});   
     alert("회원가입이 완료되었습니다.");
-    navigate("./login")
+    navigate("/login")
     //회원가입 완료! 알람 띄우기
     //로그인 페이지로 이동
   }

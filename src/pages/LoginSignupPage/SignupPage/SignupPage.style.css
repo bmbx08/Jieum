@@ -1,0 +1,264 @@
+.signup-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 18%;
+    font-family: 'Pretendard-Regular';
+    margin-left: 23%;
+    margin-top: 12vh;
+}
+
+.signup-form-title{
+    text-align: center;
+    font-weight: bold;
+    color: #8D9429;
+    margin-top: 3em;
+    margin-bottom: 0.8em;
+}
+
+.signup-container{
+    border: 1.5px solid rgba(215,215,215,255);
+    border-radius: 1em;
+    /* height: 100em; */
+    padding: 2em 5em;
+}
+
+.flex-style{
+    display:flex;
+}
+
+.signup-input-section{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+
+.signup-input-title{
+    font-size: 1em;
+    margin-bottom: 0.2em;
+}
+
+.signup-input-subtitle{
+    margin-left: 0.7em;
+    font-size: 0.8em;
+}
+
+.signup-input-style, .major-dropdown-style{
+    border: 1.5px solid rgba(199,199,199,255);
+    flex:1;
+    border-radius: 0.3em;
+    padding: 0.5em 0.8em;
+    margin-bottom: 0.5em;
+}
+
+.half-width{
+    width: 60%;
+}
+
+.major-dropdown-style{
+    width: 100%;
+    background-image: url("./images/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    margin-bottom: 1.5em;
+}
+
+select option:first-child{
+    color: rgba(201,201,201,255);
+}
+
+.signup-input-style::placeholder{
+    color: rgba(201,201,201,255);
+}
+
+.navigate-section{
+    display:flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+}
+
+.signup-page button{
+    border:none;
+}
+
+.signup-page button:hover{
+    opacity: 0.4;
+}
+
+.signup-page button:active{
+    opacity: 0.7;
+}
+
+.navigate-button{
+    margin-right: 0.5em;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    color: rgba(128,128,128,255);
+}
+
+.overlay{
+    position: fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index: 1000; */
+}
+
+.overlay-content{
+    width: 80em;
+    /* height: 40em; */
+    padding: 4em 4em;
+    background-color: white;
+    border-radius: 1.5%;
+}
+
+.overlay-top-section{
+    display:flex;
+    align-items: center;
+    margin-bottom: 3em;
+}
+
+.overlay-title{
+    font-size: 1.5em;
+    margin:0;
+}
+
+.overlay-subtitle{
+    font-size: 1em;
+    margin:0;
+    margin-top: 0.2em;
+    margin-left: 0.7em;
+    display:flex;
+    
+}
+
+.badge-row{
+    display:flex;
+    width: 100%;
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #7A7A7A;
+}
+
+.badge-title{
+    width: 10%;
+    text-align: center;
+    /* border: 1px solid black; */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge-section{
+    /* margin-top: 0.3em; */
+    width: 80%;
+    /* border: 1px solid black; */
+}
+
+.checkbox-wrapper{
+    display: inline-block;
+    margin:0.25em;
+}
+
+/* .suggestion-badge{
+    padding: 0.3em 0.8em;
+    background-color: beige;
+    border-radius: 25%;
+    font-size: 0.8em;
+    margin-right: 0.4em;
+} */
+
+.interest-checkbox-input{
+    display:none;
+}
+
+.interest-checkbox-button{
+    display: inline-block;
+    padding: 0.6em 1.4em;
+    border-radius: 1.5em;
+    background-color: rgba(210,210,210,255);
+    font-size: 0.8em;
+    text-align: center;
+    user-select: none;
+    transition: 0.1s ease-in;
+    color: rgba(75,75,75,255);
+    cursor: pointer;
+}
+
+.interest-checkbox-button:hover{
+    background-color:rgba(218, 222, 170, 0.7)
+}
+
+.interest-checkbox-button.checked{
+    background-color: rgba(218,222,170,255);
+    color:black;
+}
+
+.interest-checkbox-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+  }
+  
+.overlay-button-section{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.overlay-button{
+    margin-right: 0.5em;
+    padding: 0.15em 1em;
+    border-radius: 0.3em;
+    color:#191919;  
+}
+
+.overlay-prev-button{
+     
+}
+
+.overlay-submit-button{
+    margin-right: 0.5em;
+    padding: 0.15em 1em;
+    /* background-color: #8D9429; */
+    background-color: #DADEAA;
+    border-radius: 0.3em;
+    color: #191919;
+}
+
+.overlay-submit-button:disabled{
+    opacity: 0.3;
+    cursor: arrow;
+}
+
+.overlay-submit-button:disabled:hover{
+    opacity:0.3;
+}
+
+.overlay-submit-button:disabled:active{
+    opacity:0.3;
+}
+
+
+/* 드롭다운 화살표 없애기 */
+.major-dropdown-style{
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none;    /* Firefox */
+    appearance: none;         /* Standard */
+}
+
+/* number input창 화살표 없애기 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 파이어폭스 브라우저 */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

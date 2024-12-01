@@ -6,7 +6,7 @@ import beauryBaby from "../../../../common/images/characters/character3.png"
 const BeauryGrow = ({level,showLevelUpText}) => {
   return (
     <>
-    
+
     {showLevelUpText?<div className='level-up-text text-fade-out'>Level Up!!</div>:""}
     {level===1?<img src={beauryEgg} className='char-image char1 egg-rotate'/>:""}
     {level===2?<img src={beauryHatched} className='char-image char2'/>:""}

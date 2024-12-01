@@ -19,6 +19,10 @@
     font-size: 1.2em;
 }
 
+.site-title-section:hover{
+    cursor:pointer;
+}
+
 .user-section{
     display: flex;
     margin-right: 5em;

@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import pic1 from './img/emoji.png'
-import './LoginPage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './LoginPage.style.css';
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 
-const LoginPage = () => {
+const LoginPage = ({setAuthentication}) => {
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
+
+  const userDataArray=useSelector((state)=>state.userDataArray)
+
+  const [userInputID,setUserInputID]= useState();
+  const [userInputPassword, setUserInputPassword]=useState();
+
+  const handleLogin=(e)=>{
+    e.preventDefault();
+    // console.log(userDataArray);
+    try{
+      let matchedData=userDataArray.find((data)=>{
+        return (data.userInfo.userID===userInputID && data.userInfo.userPassword===userInputPassword)
+      })
+      if(matchedData===undefined){
+        throw new Error("아이디 또는 비밀번호가 잘못 되었습니다.")
+      } else{
+        setAuthentication(true);
+        dispatch({type:"LOGIN_USER",payload:{matchedData}})
+        // alert("로그인 완료");
+        navigate("/");
+      }
+    } catch(error){
+      alert(error.message);
+    }    
+  }
+
   return (
     <div className="display-center">
       <div className="login-container">
@@ -18,20 +48,20 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="login-area">
-          <Form className="login-box">
+          <Form className="login-box" onSubmit={handleLogin}>
             <h2 className="login-box-header">백석 지음[知音]</h2>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Control type="email" placeholder="아이디" />
+              <Form.Control type="text" placeholder="아이디" onChange={(e)=>setUserInputID(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Control type="password" placeholder="비밀번호" />
+              <Form.Control type="password" placeholder="비밀번호" onChange={(e)=>setUserInputPassword(e.target.value)}/>
             </Form.Group>
             <div className="button-box">
               <Button type="submit" className="login-button">
                 로그인
               </Button>
               <div className="register-link">
-                <a href="/signup" className="goToRegister">
+                <a className="goToRegister" onClick={()=>navigate("/signup")}>
                   회원가입
                 </a>
               </div>

@@ -12,9 +12,13 @@ import SliderExample from "./components/SliderExample";
 import StudyPeriodDropdown from "./components/StudyPeriodDropdown";
 import RecruitRadioButton from "./components/RecruitRadioButton";
 import { useNavigate } from "react-router-dom";
+import { NestCamWiredStandTwoTone } from "@mui/icons-material";
 
 const StudyCreatePage = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const currentUserData = useSelector((state)=>state.currentUserData)
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedDropdownOne, setSelectedDropdownOne] = useState("");
@@ -42,7 +46,7 @@ const StudyCreatePage = () => {
 
   const [page, setPage] = useState(1);
 
-  const dispatch = useDispatch();
+  
 
   const handleCategoryRadio = (event) => {
     setSelectedCategory(event.target.value);
@@ -128,7 +132,23 @@ const StudyCreatePage = () => {
       blogPostContent:{ 
         blogTitle: blogTitle, //게시판 제목(string)
         blogContent: blogContent, //게시판 내용(string)
+        likes: 0,
+        submissions: 0,
       },
+      createdBy:{
+        user: currentUserData,
+        date:{
+          currentDate: new Date().toLocaleString('ko-KR'),
+          formattedDate: new Date().toLocaleString('ko-KR',{
+            month: '2-digit',
+            day: '2-digit'
+          })
+        }
+      },
+      users:{
+        submissionUsers:[],
+        belongUsers:[],
+      }
     }
     console.log("스터디 객체",createdStudyData) //정보들 입력하고 등록 누르면 console에서 확인 가능
     dispatch({type:"CREATE_STUDYGROUP",payload: {createdStudyData}});
