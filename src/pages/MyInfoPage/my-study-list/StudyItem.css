@@ -1,6 +1,5 @@
 .study-item {
-  padding: 0.5rem;
-  border: 1.2px solid #e6e6e6;
+  border: 2px solid #e6e6e6;
   border-radius: 0.5rem;
   background-color: #ffffff;
   margin: 1rem;
@@ -10,12 +9,8 @@
   height: 5rem;
 }
 
-.study-item-list {
-  display: flex;
-  justify-content: space-between;
-}
-
 .study-header strong {
+  /* flex-shrink: 0; */
   font-size: 1.06rem;
   font-weight: bold;
 }
@@ -26,14 +21,22 @@
 }
 
 .study-header span {
-  margin-top: 0.25rem;
+  margin-top: 0.25rem 0;
 }
 
 .study-header {
   display: flex;
+  /* align-items: center; */
   gap: 0.8rem;
 }
 
 .study-item:hover {
   background-color: #e3e5c3;
+}
+
+.recruit-state-text-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-bottom: -1rem;
 }

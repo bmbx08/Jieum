@@ -30,7 +30,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-  border: 1.2px solid #e6e6e6;
+  border: 2px solid #e6e6e6;
   border-radius: 0.5rem;
   background-color: #ffffff;
   color: #7a7a7a;
@@ -42,9 +42,4 @@
   display: flex;
   gap: 0.8rem;
   flex-grow: 1;
-}
-
-.my-recruitStudy-item button {
-  border: none;
-  cursor: pointer;
 }

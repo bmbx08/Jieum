@@ -1,7 +1,6 @@
 import React from 'react';
 import StudyItem from './StudyItem';
 import './StudyList.css';
-// import RecruitState from './RecruitState';
 
 const StudyList = ({ studies, handleCompleteRecruit }) => {
   return (
@@ -18,10 +17,6 @@ const StudyList = ({ studies, handleCompleteRecruit }) => {
                 모집 완료
               </button>
             )}
-            {/* <RecruitState
-              study={study}
-              handleCompleteRecruit={handleCompleteRecruit}
-            /> */}
           </div>
         ))}
       </div>

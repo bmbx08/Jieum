@@ -9,7 +9,7 @@ const StudySection = ({ studies, handleCompleteRecruit }) => {
 
   const filteredData =
     statusFilter === '전체'
-      ? studies
+      ? studies.filter((study) => study.status !== '모집 중')
       : studies.filter((study) => study.status === statusFilter);
 
   return (

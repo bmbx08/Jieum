@@ -3,8 +3,12 @@ import MyPageProfile from './user-profile/MyPageProfile';
 import './MyPage.css';
 import StudySection from './my-study-list/StudySection';
 import MyStudyRecruitSection from './my-study-list/MyStudyRecruitSection';
+import UserInfoBox from './userinfo-page/UserInfoBox';
 
 const MyPage = () => {
+  const [viewMode, setViewMode] = useState(null); //정보 확인 또는 수정
+  //사용자 정보 수정 위함 (초기값 별도 저장)
+  // const [originalUserInfo, setOriginalUserInfo] = useState(createdUserData);
   //사용자 정보 저장 (로그인한 사용자)
   const [createdUserData, setCreatedUserData] = useState({
     userName: '',
@@ -79,8 +83,7 @@ const MyPage = () => {
 
   console.log('userData', createdUserData);
 
-  //사용자 정보 수정 위함 (초기값 별도 저장)
-  const [originalUserInfo, setOriginalUserInfo] = useState(createdUserData);
+  const [editedUserInfo, setEditedUserInfo] = useState(createdUserData);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -96,10 +99,21 @@ const MyPage = () => {
         interestBadgeArray: ['리액트', '자바스크립트', '컴퓨터공학부'],
       };
       setCreatedUserData(userInfo);
-      setOriginalUserInfo(userInfo);
+      // setOriginalUserInfo(userInfo);
     };
     fetchUserData();
   }, []);
+
+  const userInfoFields = [
+    { name: 'userName', label: '이름' },
+    { name: 'userDepartment', label: '학과' },
+    { name: 'studentNum', label: '학번' },
+    { name: 'userPhoneNum', label: '전화번호' },
+    { name: 'userID', label: '아이디' },
+    { name: 'userPassword', label: '비밀번호' },
+    { name: 'userAppealPhrase', label: '각오의 한 마디' },
+    { name: 'interestBadgeArray', label: '관심 태그' },
+  ];
 
   //모집 완료 버튼을 클릭했을 경우 호출되는 것
   const handleCompleteRecruit = (id) => {
@@ -110,12 +124,60 @@ const MyPage = () => {
     );
   };
 
+  //내 정보 보기
+  const handleViewInfoClick = () => {
+    setViewMode('info');
+  };
+
+  //내 정보 수정하기
+  const handleEditClick = () => {
+    setEditedUserInfo(createdUserData);
+    setViewMode('edit');
+  };
+
+  //취소 버튼
+  const handleCancelClick = () => {
+    setViewMode('info');
+  };
+
+  //저장 버튼
+  const handleSaveClick = () => {
+    setCreatedUserData(editedUserInfo);
+    setViewMode('info');
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditedUserInfo((prev) => ({
+      ...prev,
+      [name]: name === 'interestBadgeArray' ? value.split(',') : value,
+    }));
+  };
+
   return (
     <div className="my-page">
       <div className="user-info-box">
         <h2 className="myPage-title">마이페이지</h2>
-        <button className="view-info-btn">내 정보 보기</button>
+        <button className="view-info-btn" onClick={handleViewInfoClick}>
+          내 정보 보기
+        </button>
       </div>
+      {viewMode === 'info' && (
+        <UserInfoBox
+          userInfo={createdUserData}
+          fields={userInfoFields}
+          onEdit={handleEditClick}
+        />
+      )}
+      {viewMode === 'edit' && (
+        <UserInfoBox
+          userInfo={editedUserInfo}
+          fields={userInfoFields}
+          onChange={handleInputChange}
+          onSave={handleSaveClick}
+          onCancel={handleCancelClick}
+        />
+      )}
       <div className="my-page-sectionBox">
         <MyPageProfile userInfo={createdUserData} />
         <StudySection
