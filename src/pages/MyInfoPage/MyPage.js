@@ -130,33 +130,38 @@ const MyPage = () => {
   //내 정보 보기
   const handleViewInfoClick = () => {
     console.log('navigation to details page');
-    navigate('/myinfo/details');
+    navigate('/myinfo/details', {
+      state: {
+        userData: createdUserData,
+        userInfoFields,
+      },
+    });
   };
 
   //내 정보 수정하기
-  // const handleEditClick = () => {
-  //   setEditedUserInfo(createdUserData);
-  //   setViewMode('edit');
-  // };
+  const handleEditClick = () => {
+    setEditedUserInfo(createdUserData);
+    setViewMode('edit');
+  };
 
-  // //취소 버튼
-  // const handleCancelClick = () => {
-  //   setViewMode('info');
-  // };
+  //취소 버튼
+  const handleCancelClick = () => {
+    setViewMode('info');
+  };
 
-  // //저장 버튼
-  // const handleSaveClick = () => {
-  //   setCreatedUserData(editedUserInfo);
-  //   setViewMode('info');
-  // };
+  //저장 버튼
+  const handleSaveClick = () => {
+    setCreatedUserData(editedUserInfo);
+    setViewMode('info');
+  };
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setEditedUserInfo((prev) => ({
-  //     ...prev,
-  //     [name]: name === 'interestBadgeArray' ? value.split(',') : value,
-  //   }));
-  // };
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditedUserInfo((prev) => ({
+      ...prev,
+      [name]: name === 'interestBadgeArray' ? value.split(',') : value,
+    }));
+  };
 
   return (
     <div className="my-page">

@@ -1,0 +1,49 @@
+.userInfo-edit-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  border: 2px solid #e6e6e6;
+  background-color: #ffffff;
+  margin-top: 2rem;
+  padding: 3rem;
+  width: 80%;
+}
+
+.userInfo-edit-box label {
+  color: #7a7a7a;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+.userInfo-edit {
+  margin: 0.3rem;
+  display: flex;
+}
+
+.userInfo-edit-input {
+  border: 2px solid #c0c0c0;
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+.userInfo-edit-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: -1rem;
+}
+
+.userInfo-edit-btn button {
+  border: none;
+  background-color: #dbdcdd;
+  border-radius: 0.5rem;
+  width: 4.5rem;
+  height: 2rem;
+  color: #7a7a7a;
+  font-weight: bold;
+}
