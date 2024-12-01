@@ -14,18 +14,25 @@
   color: #7a7a7a;
   font-weight: bold;
   margin-left: 0;
+  margin-bottom: 0;
+  width: 15rem;
+  display: inline-block;
 }
 
 .userInfo-edit {
   margin: 0.3rem;
   display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
 }
 
 .userInfo-edit-input {
   border: 2px solid #c0c0c0;
   border-radius: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 0;
+  /* margin-left: 3rem; */
+  width: 100%;
+  max-width: 20rem;
 }
 
 .userInfo-edit-btn {
@@ -45,5 +52,29 @@
   width: 4.5rem;
   height: 2rem;
   color: #7a7a7a;
+  font-weight: bold;
+}
+
+.password-edit {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-edit input {
+  margin-right: 1rem;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.password-change-btn {
+  border: none;
+  background-color: #dbdcdd;
+  border-radius: 0.5rem;
+  height: 1.8rem;
+  width: 4rem;
+  display: inline-block;
+  color: #7a7a7a;
+  font-size: 0.9rem;
   font-weight: bold;
 }

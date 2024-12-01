@@ -26,7 +26,7 @@ const MyDetailPage = () => {
 
   //저장 버튼
   const handleSaveClick = () => {
-    setEditedUserInfo(editedUserInfo);
+    setUserInfo(editedUserInfo);
     setViewMode('info');
     console.log('수정된 정보', editedUserInfo);
   };
@@ -37,6 +37,11 @@ const MyDetailPage = () => {
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handlePasswordChange = (currentPassword, newPassword) => {
+    console.log('현재 비밀번호', currentPassword);
+    console.log('새 비밀번호', newPassword);
   };
 
   return (
@@ -54,6 +59,7 @@ const MyDetailPage = () => {
           onChange={handleInputChange}
           onSave={handleSaveClick}
           onCancel={handleCancelClick}
+          onPasswordChange={handlePasswordChange}
         />
       )}
     </div>

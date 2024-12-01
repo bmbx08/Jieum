@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './UserInfoBox.css';
 
 const UserInfoBox = ({ userInfo, fields, onEdit }) => {
@@ -41,8 +41,8 @@ const UserInfoBox = ({ userInfo, fields, onEdit }) => {
           {idPasswordFields.map((field) => (
             <p key={field.name}>
               <strong>{field.label}</strong>
-              {Array.isArray(userInfo[field.name])
-                ? userInfo[field.name].join(',')
+              {field.name === 'userPassword'
+                ? '•'.repeat(8)
                 : userInfo[field.name]}
             </p>
           ))}
@@ -53,9 +53,7 @@ const UserInfoBox = ({ userInfo, fields, onEdit }) => {
           {appealPhraseFields.map((field) => (
             <p key={field.name}>
               <strong>{field.label}</strong>
-              {Array.isArray(userInfo[field.name])
-                ? userInfo[field.name].join(',')
-                : userInfo[field.name]}
+              {userInfo[field.name]}
             </p>
           ))}
         </div>
