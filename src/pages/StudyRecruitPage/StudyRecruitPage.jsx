@@ -6,9 +6,9 @@ import SideBar from '../../default/SideBar';
 function StudyRecruitPage() {
   return (
     <div className="studyRecruit-page">
-      <div className="studyRecruit-sidebar-container">
+      {/* <div className="studyRecruit-sidebar-container">
         <SideBar />
-      </div>
+      </div> */}
       <div className="studyRecruit-main-container">
         <Check />
       </div>

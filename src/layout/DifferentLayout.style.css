@@ -1,0 +1,37 @@
+.top-navbar{
+    font-family: "Pretendard-Bold";
+    position: fixed;
+    top:0;
+    width:100%;
+    display: flex;
+    /* justify-content:space-between; */
+    height:12vh;
+    background-color: rgba(218,222,170,255);
+    display: flex;
+    align-items: center;
+}
+
+.site-title-section{
+    color:white;
+    /* font-weight:600; */
+    margin-left:3.5em;
+    font-size: 1.2em;
+}
+
+.user-section{
+    display: flex;
+    margin-right: 5em;
+    font-size: 0.8em;
+}
+
+.profile-image{
+    width: 1.5em;
+    background-color: white;
+    border-radius: 1.5em;
+    margin-right: 0.5em;
+}
+
+.different-layout-title:hover{
+    transform: scale(1.05);
+    transition: ease-in-out 0.3s;
+}

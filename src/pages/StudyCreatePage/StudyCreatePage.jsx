@@ -1,11 +1,318 @@
-import React from 'react'
+import React, {useEffect, useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import "./StudyCreatePage.style.css";
+import CategoryRadioGroup from "./components/CategoryRadioGroup";
+import DropdownOne from "./components/DropdownOne";
+// import DropdownTwo from "./components/DropdownTwo";
+import BadgeGroup from "./components/BadgeGroup";
+import StudyTable from "./components/StudyTable";
+import SubjectSearchInput from "./components/SubjectSearchInput";
+import RecruitSlider from "./components/RecruitSlider";
+import StudyPeriodDropdown from "./components/StudyPeriodDropdown";
+import RecruitRadioButton from "./components/RecruitRadioButton";
+import { useNavigate } from "react-router-dom";
 
 const StudyCreatePage = () => {
-  return (
-    <div>
-      Study Create Page
-    </div>
-  )
-}
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-export default StudyCreatePage
+  const currentUserData = useSelector((state)=>state.currentUserData)
+
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedDropdownOne, setSelectedDropdownOne] = useState("");
+
+  // const [showDropdownTwo,setShowDropdownTwo] = useState(false);
+  // const [selectedDropdownTwo, setSelectedDropdownTwo]=useState("");
+
+  const [showSubjectInput, setShowSubjectInput] = useState(false);
+  const [subjectInputContent, setSubjectInputContent] = useState("");
+
+  const [showSelfImproveInput, setShowSelfImproveInput] = useState(false);
+  const [selfImproveSubject, setSelfImproveSubject] = useState("");
+  const [interestBadgeArray, setInterestBadgeArray] = useState([]);
+
+  const [studyPeriod, setStudyPeriod] = useState("");
+  const [selectedPeriodDropdown, setSelectedPeriodDropdown] = useState("");
+  const [showStudyPeriodInput, setShowStudyPeriodInput] = useState(false);
+  const [recruitNumber, setRecruitNumber] = useState(null);
+  const [limitlessRecruitBoolean, setLimitlessRecruitBoolean] = useState(false);
+
+  const [scheduleValuesObject, setScheduleValuesObject] = useState({});
+
+  const [blogTitle, setBlogTitle] = useState("");
+  const [blogContent, setBlogContent] = useState("");
+
+  const [page, setPage] = useState(1);
+
+  
+
+  const handleCategoryRadio = (event) => {
+    setSelectedCategory(event.target.value);
+    // setShowDropdownTwo(false);
+    setShowSubjectInput(false);
+    setShowSelfImproveInput(false);
+    setSelfImproveSubject("");
+    setSelectedDropdownOne("");
+    // setSelectedDropdownTwo("");
+  };
+
+  const handleDropdownOne = (event) => {
+    setSelectedDropdownOne(event.target.value);
+    setShowSubjectInput(true);
+    // if(selectedCategory!=="자기개발"){
+    //   setShowDropdownTwo(true);
+    // }
+    // if(selectedCategory==="자기개발"){
+    //   setShowSelfImproveInput(true);
+    // }
+  };
+
+  // const handleDropdownTwo = (event)=>{
+  //   setSelectedDropdownTwo(event.target.value);
+  // }
+
+  const handleSubjectInput = (event) => {
+    setSubjectInputContent(event.target.value);
+  };
+
+  const handleStudyPeriodDropdown = (event) => {
+    setSelectedPeriodDropdown(event.target.value);
+
+    if (event.target.value === "직접 입력") {
+      setShowStudyPeriodInput(true);
+    } else {
+      setStudyPeriod(event.target.value);
+      setShowStudyPeriodInput(false);
+    }
+  };
+
+  const handleRecruitRadio = () => {
+    setLimitlessRecruitBoolean((prevState) => !prevState);
+    setRecruitNumber(99);
+    // if(limitlessRecruitBoolean===true){
+    //   setLimitlessRecruitBoolean(false);
+    // }
+    // if(limitlessRecruitBoolean===false){
+    //   setLimitlessRecruitBoolean(true);
+    // }
+  };
+
+  const handleScheduleInput = (event, index) => {
+    setScheduleValuesObject((prevObject)=>({
+      ...prevObject,
+      [`week${index+1}`]: event.target.value,
+    }))
+  }
+
+  const navigatePage = (event) => {
+    if (event.target.innerText === "다음") {
+      setPage(2);
+    } else if (event.target.innerText === "이전") {
+      setPage(1);
+    }
+  };
+
+  const handleFormSubmit= async (e)=>{
+    e.preventDefault();
+    console.log("submit data!!");
+    const createdStudyData={
+      studyInfo:{
+        studyID:Math.random().toString(36).substr(2, 9),
+        category: selectedCategory, //카테고리(string)
+        subCategory: selectedDropdownOne, //부카테고리(string)
+        subject: subjectInputContent, //과목(string)
+        studyPeriod: studyPeriod, //스터디 기간(number)
+        recruitSize: recruitNumber, //모집인원(number)
+        limitlessRecruit: limitlessRecruitBoolean, //인원제한없음 유무(boolean)
+        interestBadgeArray: interestBadgeArray, //관심 항목 배열(array)
+      },
+      weeklySchedule:scheduleValuesObject, //주차별 계획 객체(object(string값들 담음))
+      blogPostContent:{ 
+        blogTitle: blogTitle, //게시판 제목(string)
+        blogContent: blogContent, //게시판 내용(string)
+        likes: 0,
+        submissions: 0,
+      },
+      createdBy:{
+        user: currentUserData,
+        date:{
+          currentDate: new Date().toLocaleString('ko-KR'),
+          formattedDate: new Date().toLocaleString('ko-KR',{
+            month: '2-digit',
+            day: '2-digit'
+          })
+        }
+      },
+      users:{
+        submissionUsers:[],
+        belongUsers:[],
+      }
+    }
+    console.log("스터디 객체",createdStudyData) //정보들 입력하고 등록 누르면 console에서 확인 가능
+    dispatch({type:"CREATE_STUDYGROUP",payload: {createdStudyData}});
+    alert("스터디 생성이 완료되었습니다.");
+    navigate("/newstudy");
+  }
+
+  useEffect(() => {
+    if (selectedCategory) {
+      setInterestBadgeArray([...interestBadgeArray, selectedCategory]);
+    }
+    if (selectedDropdownOne) {
+      setInterestBadgeArray([...interestBadgeArray, selectedDropdownOne]);
+    }
+    // console.log(Math.random().toString(36).substr(2, 9))
+    // if(selectedDropdownTwo){
+    //   setInterestBadgeArray([...interestBadgeArray,selectedDropdownTwo])
+    // }
+  }, [selectedCategory, selectedDropdownOne, subjectInputContent]);
+
+  return (
+    <div className="study-create-page">
+      <form onSubmit={handleFormSubmit} className="form-container">
+        {page === 1 ? (
+          <>
+            <div className="title-segment">
+              <div className="form-title font-style">스터디 생성하기</div>
+            </div>
+            <div className="top-box">
+              <div>
+                <div className="section-title font-style">
+                  카테고리를 선택해주세요.
+                </div>
+                <CategoryRadioGroup
+                  selectedCategory={selectedCategory}
+                  handleCategoryRadio={handleCategoryRadio}
+                />
+                <DropdownOne
+                  selectedDropdownOne={selectedDropdownOne}
+                  handleDropdownOne={handleDropdownOne}
+                  selectedCategory={selectedCategory}
+                />
+                {/* {showDropdownTwo?<DropdownTwo selectedDropdownTwo={selectedDropdownTwo} handleDropdownTwo={handleDropdownTwo} selectedDropdownOne={selectedDropdownOne} />:""} */}
+                {showSelfImproveInput ? (
+                  <input
+                    onChange={(event) =>
+                      setSelfImproveSubject(event.target.value)
+                    }
+                    placeholder={`${selectedDropdownOne}관련 과목을 적어주세요..`}
+                  />
+                ) : (
+                  ""
+                )}
+                {/* {showSubjectInput?():""}   */}
+                <SubjectSearchInput handleSubjectInput={handleSubjectInput} />
+              </div>
+              <div className="mb-2">
+                <div className="section-title font-style">스터디 기간</div>
+                <div className="flex align-center">
+                  <StudyPeriodDropdown
+                    studyPeriod={studyPeriod}
+                    handleStudyPeriodDropdown={handleStudyPeriodDropdown}
+                    selectedPeriodDropdown={selectedPeriodDropdown}
+                  />
+                  {showStudyPeriodInput ? (
+                    <>
+                      <input
+                        onChange={(event) => setStudyPeriod(event.target.value)}
+                        className="subject-input period-input"
+                      />
+                      주
+                    </>
+                  ) : (
+                    ""
+                  )}
+                </div>
+              </div>
+
+              <div className="mb-2">
+                <div className="section-title font-style">
+                  모집인원: {recruitNumber}명
+                </div>
+                <div>
+                  <RecruitRadioButton
+                    limitlessRecruitBoolean={limitlessRecruitBoolean}
+                    handleRecruitRadio={handleRecruitRadio}
+                  />
+                  <RecruitSlider
+                    setRecruitNumber={setRecruitNumber}
+                    limitlessRecruitBoolean={limitlessRecruitBoolean}
+                  />
+                  {/* <SliderExample/> */}
+                </div>
+              </div>
+
+              <div></div>
+
+              {/* <div>
+                  <div>스터디 tag</div>
+                  <BadgeGroup selectedCategory={selectedCategory} selectedDropdownOne={selectedDropdownOne} selectedDropdownTwo={selectedDropdownTwo} selfImproveSubject={selfImproveSubject}/>
+                </div> */}
+              <div></div>
+            </div>
+
+            <div className="navigate-section">
+              <div>Page {page} of 2</div>
+              <button onClick={navigatePage} className="navigate-button">
+                다음
+              </button>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+
+        {page === 2 ? (
+          <>
+            <div className="title-segment">
+              <div className="form-title font-style">스터디 생성하기</div>
+            </div>
+            <div className="top-box">
+              <div>
+                <div className="section-title font-style">스터디 tag</div>
+                <BadgeGroup
+                  selectedCategory={selectedCategory}
+                  selectedDropdownOne={selectedDropdownOne}
+                  selfImproveSubject={selfImproveSubject}
+                  subjectInputContent={subjectInputContent}
+                />
+              </div>
+              <div>
+                <div className="section-title font-style">주차별 학습 일정</div>
+                <StudyTable studyPeriod={studyPeriod} handleScheduleInput={handleScheduleInput}/> 
+              </div>
+            </div>
+            <div className="bottom-box">
+              <div className="title-part">
+                <input onChange={(event)=>setBlogTitle(event.target.value)} placeholder="제목" className="title-input" />
+              </div>
+              <div className="content-part">
+                <textarea
+                  onChange={(event)=>setBlogContent(event.target.value)} 
+                  placeholder="내용을 입력하세요. (시간, 장소, 진행 방식등)"
+                  className="content-textarea"
+                />
+              </div>
+            </div>
+
+            <div className="navigate-section">
+              
+              <div>Page {page} of 2</div>
+
+              <div className="button-section">
+                <button onClick={navigatePage} className="navigate-button">
+                  이전
+                </button>
+                <button type="submit" className="submit-button">등록</button>
+              </div>
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+      </form>
+    </div>
+  );
+};
+
+export default StudyCreatePage;

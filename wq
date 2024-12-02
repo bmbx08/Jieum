@@ -1,0 +1,40 @@
+[33m6c265ff[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mpre-develop[m[33m)[m changed item-badge css name
+[33m4339ee7[m additional fixing with merge
+[33m568c7ca[m merged github repo with local repo
+[33ma118dcf[m added npm libraries
+[33mc47184a[m Merge pull request #33 from bmbx08/all-studies-page
+[33mbc011fa[m[33m ([m[1;31morigin/all-studies-page[m[33m)[m conflicts fixed before merge
+[33mac20ecd[m moved SubNav to AllStudiesPage folder
+[33mb0e686c[m finished all-studies-page
+[33mb5c2e3d[m adding list badges
+[33mdac22db[m added font
+[33m330eb62[m[33m ([m[1;31morigin/study-create-page[m[33m, [m[1;32mstudy-create-page[m[33m)[m commit before zip
+[33m9af5b2c[m added 주석
+[33m79e163f[m added allstudiespage folder
+[33m56cad65[m[33m ([m[1;31morigin/home-page[m[33m, [m[1;32mhome-page[m[33m)[m fixing homepage, router needs rerouting
+[33mbc2aabd[m fixed wrong files, added store dispatch
+[33mc712356[m add font
+[33mb24867a[m added backup folder
+[33m3909ec2[m hihihihih
+[33maa34759[m changed electiveList
+[33ma1f082e[m check-post-edit-1121
+[33m39d73fa[m finished merging
+[33m5257c7c[m separated login and signup page
+[33m9e520ee[m[33m ([m[1;32mlist[m[33m)[m finished state values
+[33m77ef57f[m home-page
+[33md6bfab0[m home-page
+[33m558aaa2[m finished/inputs need fixing
+[33m5b52445[m[33m ([m[1;31morigin/login-signup-page-old[m[33m)[m login/signup 페이지 push
+[33mae0082f[m search input needs working
+[33me1c448c[m small commit 2
+[33m7a4a2be[m small commit1
+[33mb461ae1[m commit before checkout
+[33m8c0d4dd[m test error when merging
+[33m459dbcd[m commit before merging to nav
+[33me333200[m Merge pull request #7 from bmbx08/study-create-page
+[33m341ad42[m merged into study-create-page
+[33md66a64f[m commit before merging
+[33m2864989[m Update README.md
+[33m7f69d41[m changed routes
+[33m6db64cf[m study-create-page in progress
+[33m4bff431[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m Initial commit
