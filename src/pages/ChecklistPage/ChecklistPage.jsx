@@ -13,7 +13,7 @@ const WeekChecklist = ({ id, week, description, link, checked, onCheck }) => (
       onChange={onCheck}
     />
     <Link to={link} className="week-todo">
-      {`${id}: ${description}`}
+      {`${week}: ${description}`}
     </Link>
   </div>
 );
@@ -71,7 +71,7 @@ const ChecklistContent = ({ weeks, completed, onCheck }) => (
       <WeekChecklist
         key={key}
         id={key}
-        week={index + 1} // 1부터 시작하는 주차 표시
+        week={`${index + 1}주차`} // 수정된 부분
         description={weeks[key].description}
         link={weeks[key].link}
         checked={completed[index]}
