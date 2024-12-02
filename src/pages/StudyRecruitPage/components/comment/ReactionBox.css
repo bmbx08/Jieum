@@ -1,0 +1,26 @@
+.reaction-box {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  /* font-size: 0.8rem; */
+  color: #7a7a7a;
+  margin-bottom: 0.9rem;
+}
+
+.reaction-item {
+  display: flex;
+  cursor: pointer;
+}
+
+.reaction-item span {
+  margin-right: 0.3rem;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.like-icon,
+.liked-icon,
+.comment-icon {
+  margin-right: 0.2rem;
+  font-size: 0.6rem;
+}

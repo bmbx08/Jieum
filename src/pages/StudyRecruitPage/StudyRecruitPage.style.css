@@ -1,0 +1,30 @@
+.studyRecruit-page {
+  font-family: 'Pretendard-Regular';
+  display: flex;
+  flex-direction: row;
+  /* height: 100vh; */
+  width: 100%;
+}
+
+/* .studyRecruit-sidebar-container {
+  width: 23%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+} */
+
+.studyRecruit-main-container {
+  /* position: relative; */
+  margin-top: 12vh;
+  margin-bottom: 3em;
+  margin-left: 23%;
+  flex: 1;
+  padding: 1rem;
+  /* overflow-y: auto; */
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+  align-items: flex-start;
+}
