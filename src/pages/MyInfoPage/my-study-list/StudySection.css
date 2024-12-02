@@ -9,21 +9,24 @@
   border: 2px solid #e6e6e6;
   border-radius: 0.5rem;
   width: 80%;
-  padding: 0.7rem;
+  padding: 1rem;
 }
 
-.study-status-filter {
+/* .study-status-filter {
   display: flex;
   gap: 1rem;
   margin-left: 1.1rem;
-}
+} */
 
 .status-btn {
+  margin-left: 1.4rem;
   border: none;
   background: none;
-  font-size: 0.87rem;
+  font-size: 1rem;
   cursor: pointer;
   position: relative;
+  border-bottom: 3px solid #8d9429;
+  color: #8d9429;
 }
 
 .status-btn:hover {

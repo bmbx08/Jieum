@@ -9,13 +9,52 @@ const UserInfoEdit = ({
   onCancel,
   onPasswordChange,
 }) => {
+  //css 조정 위한 데이터 그룹화
+  const basicInfoFields = fields.filter(
+    (field) =>
+      field.name !== 'userID' &&
+      field.name !== 'userPassword' &&
+      field.name !== 'userAppealPhrase' &&
+      field.name !== 'interestBadgeArray'
+  );
+
+  const idPasswordFields = fields.filter(
+    (field) => field.name === 'userID' || field.name === 'userPassword'
+  );
+
+  const appealPhraseFields = fields.filter(
+    (field) => field.name === 'userAppealPhrase'
+  );
+
   return (
     <div>
       <h3 className="user-info-title">내 정보 수정</h3>
       <div className="userInfo-edit-box">
-        {fields
-          .filter((field) => field.name !== 'interestBadgeArray')
-          .map((field) => (
+        {/* 기본 정보 */}
+        <div className="info-group basic-info-group">
+          {basicInfoFields.map((field) => (
+            <div key={field.name} className="userInfo-edit">
+              <label>
+                {field.label}
+                <input
+                  className="userInfo-edit-input"
+                  type="text"
+                  name={field.name}
+                  value={
+                    Array.isArray(userInfo[field.name])
+                      ? userInfo[field.name].join(',')
+                      : userInfo[field.name]
+                  }
+                  onChange={onChange}
+                />
+              </label>
+            </div>
+          ))}
+        </div>
+
+        {/* 아이디 및 비밀번호 */}
+        <div className="info-group idPassword-info-group">
+          {idPasswordFields.map((field) => (
             <div key={field.name} className="userInfo-edit">
               <label>
                 {field.label}
@@ -55,19 +94,34 @@ const UserInfoEdit = ({
                 ) : (
                   <input
                     className="userInfo-edit-input"
-                    type={field.name === 'userPassword' ? 'password' : 'text'}
+                    type="text"
                     name={field.name}
-                    value={
-                      Array.isArray(userInfo[field.name])
-                        ? userInfo[field.name].join(',')
-                        : userInfo[field.name]
-                    }
+                    value={userInfo[field.name]}
                     onChange={onChange}
                   />
                 )}
               </label>
             </div>
           ))}
+        </div>
+
+        {/* 각오의 한 마디 */}
+        <div className="info-group appeal-info-group">
+          {appealPhraseFields.map((field) => (
+            <div key={field.name} className="userInfo-edit">
+              <label>
+                {field.label}
+                <input
+                  className="userInfo-edit-input"
+                  type="text"
+                  name={field.name}
+                  value={userInfo[field.name]}
+                  onChange={onChange}
+                />
+              </label>
+            </div>
+          ))}
+        </div>
         <div className="userInfo-edit-btn">
           <button onClick={onSave}>저장</button>
           <button onClick={onCancel}>취소</button>
