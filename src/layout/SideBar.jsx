@@ -8,7 +8,7 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import BrowserUpdatedIcon from "@mui/icons-material/BrowserUpdated";
 import SettingsIcon from "@mui/icons-material/Settings";
-import User from "../default/User";
+import User from "./User";
 import { useNavigate } from "react-router-dom";
 
 const SideBar = ({authentication, setAuthentication}) => {
