@@ -16,10 +16,17 @@ function reducer(state=initialState,action){
         case "LOGIN_USER":
             return{...state,currentUserData:payload.matchedData}
 
-        //     return{...state}
-
         case "CREATE_STUDYGROUP":
             return {...state,createdStudyList:[...state.createdStudyList,payload.createdStudyData]}
+
+        case "INCREASE_CHAR_BAR_BY_PAYLOAD":
+            let newPercent = state.currentUserData.characterInfo.barPercent+ payload.amount;
+            let newLevel;
+            if(newPercent>=100){
+                newPercent -= 100;
+                newLevel = state.currentUserData.characterInfo.level + 1
+            }
+            return {...state,currentUserData:{...state.currentUserData, characterInfo:{level:newLevel,barPercent:newPercent}}};
 
         default:
             return{...state}

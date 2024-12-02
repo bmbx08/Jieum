@@ -3,9 +3,10 @@ import BeauryGrow from './BeauryGrow';
 import CharInfoBox from './CharInfoBox';
 import CharProgressBar from './CharProgressBar';
 import "../HomepageComponent.style.css";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const CharacterSection = () => {
+  const dispatch=useDispatch();
   const currentUserData = useSelector((state)=>state.currentUserData);
 
   const [charLevel,setCharLevel]=useState(1);
@@ -24,12 +25,17 @@ const CharacterSection = () => {
   return (
     <div className='top-left-box'>
       <div className='character-image-box'>
-        <CharInfoBox level={currentUserData.characterInfo.level}/>
+        <CharInfoBox level={charLevel}/>
+        <BeauryGrow level={charLevel} showLevelUpText={showLevelUpText}/>
+        <CharProgressBar barPercent={barPercent}/>
+        {/* <CharInfoBox level={currentUserData.characterInfo.level}/>
         <BeauryGrow level={currentUserData.characterInfo.level} showLevelUpText={showLevelUpText}/>
-        <CharProgressBar barPercent={currentUserData.characterInfo.barPercent}/>
+        <CharProgressBar barPercent={currentUserData.characterInfo.barPercent}/> */}
       </div>
-      {/* <button onClick={()=>setBarPercent(barPercent+10)}>Weekly Schedule Finish</button>
-      <button onClick={()=>setBarPercent(barPercent+30)}>Entire Study Finish</button> */}
+      <button onClick={()=>setBarPercent(barPercent+10)}>Weekly Schedule Finish</button>
+      <button onClick={()=>setBarPercent(barPercent+30)}>Entire Study Finish</button>
+      {/* <button onClick={()=>dispatch({type:"INCREASE_CHAR_BAR_BY_PAYLOAD",payload:{amount:10}})}>Weekly Schedule Finish</button>
+      <button onClick={()=>dispatch({type:"INCREASE_CHAR_BAR_BY_PAYLOAD",payload:{amount:30}})}>Entire Study Finish</button> */}
     </div>
   )
 }

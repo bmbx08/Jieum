@@ -8,11 +8,9 @@ import BadgeGroup from "./components/BadgeGroup";
 import StudyTable from "./components/StudyTable";
 import SubjectSearchInput from "./components/SubjectSearchInput";
 import RecruitSlider from "./components/RecruitSlider";
-import SliderExample from "./components/SliderExample";
 import StudyPeriodDropdown from "./components/StudyPeriodDropdown";
 import RecruitRadioButton from "./components/RecruitRadioButton";
 import { useNavigate } from "react-router-dom";
-import { NestCamWiredStandTwoTone } from "@mui/icons-material";
 
 const StudyCreatePage = () => {
   const navigate = useNavigate();
