@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./ChecklistPage.css";
 
-const WeekChecklist = ({ week, description, link, checked, onCheck }) => (
+const WeekChecklist = ({ id, week, description, link, checked, onCheck }) => (
   <div className="week-checklist">
     <input
       type="checkbox"
@@ -13,7 +13,7 @@ const WeekChecklist = ({ week, description, link, checked, onCheck }) => (
       onChange={onCheck}
     />
     <Link to={link} className="week-todo">
-      {`${week}주차: ${description}`}
+      {`${id}: ${description}`}
     </Link>
   </div>
 );
@@ -67,12 +67,13 @@ const ChecklistContent = ({ weeks, completed, onCheck }) => (
     <div className="checklist-header">
       <h5 className="check-header-text">- 체크리스트</h5>
     </div>
-    {weeks.map((week, index) => (
+    {Object.keys(weeks).map((key, index) => (
       <WeekChecklist
-        key={index}
-        week={week.week}
-        description={week.description}
-        link={week.link}
+        key={key}
+        id={key}
+        week={index + 1} // 1부터 시작하는 주차 표시
+        description={weeks[key].description}
+        link={weeks[key].link}
         checked={completed[index]}
         onCheck={() => onCheck(index)}
       />
@@ -81,19 +82,21 @@ const ChecklistContent = ({ weeks, completed, onCheck }) => (
 );
 
 const ChecklistPage = () => {
-  const weeks = [
-    { week: 1, description: "HTML & CSS 기초 학습", link: "/checklist/week1" },
-    {
-      week: 2,
+  const weeks = {
+    week1: { description: "HTML & CSS 기초 학습", link: "/checklist/week1" },
+    week2: {
       description: "React 기초 및 컴포넌트 구조 이해",
       link: "/checklist/week2",
     },
-    { week: 3, description: "간단한 프로젝트 제작", link: "/checklist/week3" },
-    { week: 4, description: "최종 프로젝트 진행", link: "/checklist/week4" },
-  ];
+    week3: { description: "간단한 프로젝트 제작", link: "/checklist/week3" },
+    week4: { description: "최종 프로젝트 진행", link: "/checklist/week4" },
+  };
 
-  const [completed, setCompleted] = useState(Array(weeks.length).fill(false));
-  const progress = (completed.filter(Boolean).length / weeks.length) * 100;
+  const [completed, setCompleted] = useState(
+    Array(Object.keys(weeks).length).fill(false)
+  );
+  const progress =
+    (completed.filter(Boolean).length / Object.keys(weeks).length) * 100;
 
   const handleCheck = (index) => {
     const updated = [...completed];
@@ -107,7 +110,7 @@ const ChecklistPage = () => {
     <div className="display-center">
       <div className="main-content">
         <ProgressSection
-          week={8}
+          week={2}
           title="React 기초 및 컴포넌트 구조 이해"
           progress={progress}
         />
