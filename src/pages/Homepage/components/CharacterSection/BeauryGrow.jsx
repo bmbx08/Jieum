@@ -9,8 +9,8 @@ const BeauryGrow = ({level,showLevelUpText}) => {
 
     {showLevelUpText?<div className='level-up-text text-fade-out'>Level Up!!</div>:""}
     {level===1?<img src={beauryEgg} className='char-image char1 egg-rotate'/>:""}
-    {level===2?<img src={beauryHatched} className='char-image char2'/>:""}
-    {level>=3?<img src={beauryBaby} className='char-image char3'/>:""}
+    {level===2?<img src={beauryHatched} className='char-image char2 small-bounce'/>:""}
+    {level>=3?<img src={beauryBaby} className='char-image char3 big-bounce'/>:""}
     
     </>
     
