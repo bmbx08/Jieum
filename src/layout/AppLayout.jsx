@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Outlet, useNavigate} from "react-router-dom";
-import profileImg from "./images/male-profile.png";
 import "./AppLayout.style.css";
 import SideBar from "./SideBar";
 

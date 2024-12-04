@@ -151,7 +151,7 @@ const StudyCreatePage = () => {
     console.log("스터디 객체",createdStudyData) //정보들 입력하고 등록 누르면 console에서 확인 가능
     dispatch({type:"CREATE_STUDYGROUP",payload: {createdStudyData}});
     alert("스터디 생성이 완료되었습니다.");
-    navigate("/newstudy");
+    navigate("/");
   }
 
   useEffect(() => {

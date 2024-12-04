@@ -1,6 +1,6 @@
 const categoryArray = [
     {
-      id: 1,
+      id: "i975sbzx1",
       subject: "파이썬프로그래밍",
       category: "전공",
       subCategory:"컴퓨터공학부",
@@ -17,7 +17,7 @@ const categoryArray = [
       }
     },
     {
-      id: 2,
+      id: "j83ahc2xl",
       subject: "웹프로그래밍",
       category: "전공",
       subCategory:"개발",
@@ -34,7 +34,7 @@ const categoryArray = [
       }
     },
     {
-      id: 3,
+      id: "i4adc7x5m",
       subject: "인문학",
       category: "교양",
       subCategory:"어학",
@@ -51,7 +51,7 @@ const categoryArray = [
       }
     },
     {
-      id: 4,
+      id: "5uch9d75x",
       subject: "기독교세계관",
       category: "자기개발",
       subCategory:"사랑의실천",
