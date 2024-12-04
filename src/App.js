@@ -23,8 +23,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<AppLayout authentication={authentication} setAuthentication={setAuthentication}/>}> {/*네브바*/}
-          {/* <Route index element={<Homepage authentication={authentication}/>} /> */}
-          <Route index element={<AcceptMemberPage/>} />
+          <Route index element={<Homepage authentication={authentication}/>} />
 
           <Route path="studies">
             <Route index element={<AllStudiesPage/>}/>
