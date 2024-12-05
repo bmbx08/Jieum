@@ -35,7 +35,7 @@ function App() {
             <Route path=":id" element={<StudyInfoPage/>}/> {/*스터디 상세 페이지*/}
             
             <Route path="manage">
-              <Route path="id"/>
+              <Route path=":id"/>
               <Route path="accept">
                 <Route path=":id" element={<AcceptMemberPage/>}/>
               </Route>
